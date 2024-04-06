@@ -1,0 +1,147 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Explora&display=swap");
+
+:root {
+    --clr-light: #20130a;
+    --clr-dark: #e9f0c9;
+    --clr-primary: #123142;
+    --clr-secondary: #142026;
+    --clr-accent: #3b657a;
+    --bgc-body: linear-gradient(to bottom right, #f0f5e1, #e9f0c9,);
+    --box-shadow: #021E23 0px 1px 4px;
+    --border-radius: 5px;
+
+    --foreground: var(--clr-light);
+    --background: var(--clr-dark);
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: "Explora", sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-image: var(--bgc-body);
+    justify-content: space-between;
+    min-height: 100vh;
+}
+
+nav {
+    height: 4.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-flow: row wrap;
+    background-color: var(--clr-secondary);
+    color: var(--clr-dark);
+    gap: 1rem;
+    padding-inline: 1rem;
+    box-shadow: var(--box-shadow);
+  }
+
+h1 {
+    font-family: 'Cinzel', sans-serif;
+    font-size: 2.2rem;
+	letter-spacing: .08em;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+/*
+#add-character {
+    display: flex;
+    justify-content: center;
+    font-family: 'Cinzel';
+    text-align: center;
+    background-color: #e9f0c9;
+    font-size: 1.2rem;
+    padding-inline: 1rem;
+}*/
+
+.button {
+	--offset: 5px;
+	--border-size: 2px;
+	
+	display: block;
+	position: relative;
+	padding: 0.8em 1.8em;
+	appearance: none;
+	border: 0;
+	background: transparent;
+	color: var(--clr-dark);
+	text-transform: uppercase;
+    font-family: 'Cinzel';
+	letter-spacing: .25em;
+	outline: none;
+	cursor: pointer;
+	font-weight: bold;
+	border-radius: 0;
+	box-shadow: inset 0 0 0 var(--border-size) currentcolor;
+	transition: background .8s ease;
+	
+	&:hover {
+		background: rgba(100, 0, 0, .03);
+	}
+
+&-horizontal,
+	&-vertical {
+		position: absolute;
+		top: var(--horizontal-offset, 0);
+		right: var(--vertical-offset, 0);
+		bottom: var(--horizontal-offset, 0);
+		left: var(--vertical-offset, 0);
+		transition: transform .8s ease;
+		will-change: transform;
+		
+		&::before {
+			content: '';
+			position: absolute;
+			border: inherit;
+		}
+	}
+	
+	&-horizontal {
+		--vertical-offset: calc(var(--offset) * -1);
+		border-top: var(--border-size) solid currentcolor;
+		border-bottom: var(--border-size) solid currentcolor;
+		
+		&::before {
+			top: calc(var(--vertical-offset) - var(--border-size));
+			bottom: calc(var(--vertical-offset) - var(--border-size));
+			left: calc(var(--vertical-offset) * -1);
+			right: calc(var(--vertical-offset) * -1);
+		}
+	}
+	
+	&:hover &-horizontal {
+		transform: scaleX(0);
+	}
+	
+	&-vertical {
+		--horizontal-offset: calc(var(--offset) * -1);
+		border-left: var(--border-size) solid currentcolor;
+		border-right: var(--border-size) solid currentcolor;
+		
+		&::before {
+			top: calc(var(--horizontal-offset) * -1);
+			bottom: calc(var(--horizontal-offset) * -1);
+			left: calc(var(--horizontal-offset) - var(--border-size));
+			right: calc(var(--horizontal-offset) - var(--border-size));
+		}
+	}
+	
+	&:hover &-vertical {
+		transform: scaleY(0);
+	}
+	
+}
+
+footer {
+    height: 5rem;
+}
