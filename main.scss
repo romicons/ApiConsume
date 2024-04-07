@@ -42,27 +42,56 @@ nav {
     gap: 1rem;
     padding-inline: 1rem;
     box-shadow: var(--box-shadow);
+
+    h2  {
+    display: none;
+
+    @media screen and (min-width:900px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+    
+    }
+
+    #dark-mode {
+    appearance: none;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+        color: var(--clr-accent);
+    }
+
+    &:hover svg path {
+        fill: var(--clr-accent);
+        }
+    }
+
+    div {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    }
   }
 
 h1 {
     font-family: 'Cinzel', sans-serif;
     font-size: 2.2rem;
-	letter-spacing: .08em;
     display: flex;
     align-content: center;
     align-items: center;
     cursor: pointer;
+
+    &:hover {
+        color: var(--clr-accent);
+    }
+
+    &:hover svg path {
+        fill: var(--clr-accent);
+    }
 }
-/*
-#add-character {
-    display: flex;
-    justify-content: center;
-    font-family: 'Cinzel';
-    text-align: center;
-    background-color: #e9f0c9;
-    font-size: 1.2rem;
-    padding-inline: 1rem;
-}*/
 
 .button {
 	--offset: 5px;
