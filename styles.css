@@ -6,11 +6,17 @@
   --clr-primary: #123142;
   --clr-secondary: #142026;
   --clr-accent: #3b657a;
-  --bgc-body: linear-gradient(to bottom right, #f0f5e1, #e9f0c9,);
+  --bgc-body: linear-gradient(to bottom right, #f0f5e1, #e9f0c9);
   --box-shadow: #021E23 0px 1px 4px;
   --border-radius: 5px;
-  --foreground: var(--clr-light);
-  --background: var(--clr-dark);
+}
+
+.darkmode {
+  --clr-light: #123142;
+  --clr-dark: #20130a;
+  --clr-primary: #142026;
+  --clr-secondary: #e9f0c9;
+  --bgc-body: linear-gradient(to bottom right, #142026, #20130a);
 }
 
 * {
@@ -42,6 +48,7 @@ nav {
 }
 nav h2 {
   display: none;
+  font-size: 1.5rem;
 }
 @media screen and (min-width: 900px) {
   nav h2 {
@@ -50,16 +57,19 @@ nav h2 {
     align-items: center;
   }
 }
-nav #dark-mode {
+nav #btn-darkmode {
   appearance: none;
   background-color: transparent;
   border: none;
   cursor: pointer;
 }
-nav #dark-mode:hover {
+nav #btn-darkmode svg path {
+  fill: var(--clr-dark);
+}
+nav #btn-darkmode:hover {
   color: var(--clr-accent);
 }
-nav #dark-mode:hover svg path {
+nav #btn-darkmode:hover svg path {
   fill: var(--clr-accent);
 }
 nav div {
@@ -75,6 +85,9 @@ h1 {
   align-content: center;
   align-items: center;
   cursor: pointer;
+}
+h1 svg path {
+  fill: var(--clr-dark);
 }
 h1:hover {
   color: var(--clr-accent);
