@@ -14,6 +14,7 @@
         <title>GoT Data</title>
         <link rel="icon" type="img/svg" href="assets/favicon.ico" />
         <link href="styles.css" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/9096056511.js" crossorigin="anonymous"></script>
     </head>
     <body>
         <nav>
@@ -42,13 +43,13 @@
             </div>
         </nav>
         <main>
-            <section id="filters-for-searching">
+            <section>
                 <form id="search-form">
                     <select name="SearchBy" id="search-by">
-                        <option value="SearchBy">Search by..</option>
+                        <option value="SearchBy">Search by...</option>
                         <option value="House">House</option>
+                        <option value="Gender">Gender</option>
                         <option value="State">State</option>
-                        <option value="Category"></option>
                     </select>
             
                     <select name="House" id="house-search">
@@ -62,20 +63,19 @@
                         <option value="Tully">Tully</option>
                         <option value="Tyrell">Tyrell</option>
                     </select>
+
+                    <select name="Gender" id="gender-search">
+                        <option value="Gender">Gender...</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other/Unknown">Other/Unknown</option>
+                    </select>
                     
                     <select name="State" id="state-search">
-                        <option value="Seniority">State...</option>
+                        <option value="State">State...</option>
                         <option value="Alive">Alive</option>
                         <option value="Dead">Dead</option>
                         <option value="Unknown">Unknown</option>
-                    </select>
-                    
-                    <select name="Category" id="category-search" class="category-search">
-                        <option value="Category">Category...</option>
-                        <option value="Horse Care">Horse Care</option>
-                        <option value="Competition">Competition</option>
-                        <option value="Training">Training</option>
-                        <option value="Breeding">Breeding</option>
                     </select>
                     
                     <input type="button" value="Search" id="btn-search" /> 
@@ -96,7 +96,18 @@
             </section>
         </main>
         <footer>
-            <p>© 2024 Romina Constantinoff. Todos los derechos reservados.</p>
+                <ul class="social-networks">
+                    <li>
+                        <a href="https://github.com/romicons" target="_blank" aria-label="Link a Github" class="footer-icon"><i class="fab fa-github-alt"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/romina-evelin-constantinoff/" class="footer-icon" target="_blank" aria-label="Link a LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </li>
+                    <li>
+                        <a href="mailto:romina.constantinoff@gmail.com" aria-label="Link a Email" target="_blank" class="footer-icon"><i class="fas fa-envelope"></i></a>
+                    </li>
+                </ul>
+                <p>© 2024 Romina Constantinoff. Todos los derechos reservados.</p>
         </footer>
     <script src="main.js"></script>
     </body>
