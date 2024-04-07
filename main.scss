@@ -37,16 +37,25 @@ body {
 }
 
 nav {
-    height: 4.2rem;
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-flow: row wrap;
+    position: sticky;
+    flex-direction: column;
+    columns: 2;
+    gap: 0.5rem;
     background-color: var(--clr-secondary);
     color: var(--clr-dark);
-    gap: 1rem;
     padding-inline: 1rem;
+    padding-bottom: 0.8rem;
     box-shadow: var(--box-shadow);
+
+    @media screen and (min-width:580px) {
+        flex-flow: row wrap;
+        height: 4.2rem;
+        gap: 1rem;
+    }
 
     h2  {
     display: none;
@@ -185,6 +194,60 @@ h1 {
 	
 }
 
+#search-form {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    gap: 1rem;
+
+    select {
+        background-color: #f0f5e1;
+        border: solid 2px var(--clr-primary);
+        border-radius: var(--border-radius);
+        padding: 0.3rem;
+        font-family: 'Cinzel';
+        font-size: 1.2rem;
+        cursor: pointer;
+
+        &:hover {
+            background-color: var(--clr-accent);
+            color: var(--clr-dark);
+        }
+
+        option {
+            font-family: 'Cinzel';
+        }
+    }
+}
+
 footer {
-    height: 5rem;
+    background-color: var(--clr-secondary);
+    color: var(--clr-dark);
+    padding-block: 0.8rem;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-flow: column wrap;
+
+    ul {
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        font-size: 1.5rem;
+        gap: 2rem;
+    }
+
+    p {
+        font-size: 1.5rem;
+    }
+
+    .footer-icon {
+       color: var(--clr-dark); 
+
+       &:hover {
+        color: var(--clr-accent);
+        }
+    }
 }
