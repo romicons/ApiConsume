@@ -35,11 +35,11 @@ body {
 }
 
 nav {
-  height: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
   position: sticky;
+  top: 0;
   flex-direction: column;
   columns: 2;
   gap: 0.5rem;
@@ -48,13 +48,11 @@ nav {
   padding-inline: 1rem;
   padding-bottom: 0.8rem;
   box-shadow: var(--box-shadow);
-}
-@media screen and (min-width: 580px) {
-  nav {
-    flex-flow: row wrap;
-    height: 4.2rem;
-    gap: 1rem;
-  }
+  /*   @media screen and (min-width:580px) {
+         flex-flow: row wrap;
+         height: 4.2rem;
+         gap: 1rem;
+     }*/
 }
 nav h2 {
   display: none;
@@ -69,9 +67,18 @@ nav h2 {
 }
 nav #btn-darkmode {
   appearance: none;
+  color: var(--clr-dark);
   background-color: transparent;
+  align-items: center;
+  display: flex;
+  gap: 0.5rem;
+  font-weight: bold;
+  letter-spacing: 0.25em;
   border: none;
   cursor: pointer;
+}
+nav #btn-darkmode span {
+  font-family: "Cinzel";
 }
 nav #btn-darkmode svg path {
   fill: var(--clr-dark);
@@ -84,7 +91,7 @@ nav #btn-darkmode:hover svg path {
 }
 nav div {
   display: flex;
-  justify-content: center;
+  align-items: center;
   gap: 1.5rem;
 }
 
@@ -92,7 +99,6 @@ h1 {
   font-family: "Cinzel", sans-serif;
   font-size: 2.2rem;
   display: flex;
-  align-content: center;
   align-items: center;
   cursor: pointer;
 }
@@ -111,13 +117,13 @@ h1:hover svg path {
   --border-size: 2px;
   display: block;
   position: relative;
-  padding: 0.8em 1.8em;
+  padding: 0.5em 1.2em;
   appearance: none;
   border: 0;
   background: transparent;
   color: var(--clr-dark);
-  text-transform: uppercase;
   font-family: "Cinzel";
+  text-transform: uppercase;
   letter-spacing: 0.25em;
   outline: none;
   cursor: pointer;
@@ -215,6 +221,7 @@ footer ul {
 }
 footer p {
   font-size: 1.5rem;
+  text-align: center;
 }
 footer .footer-icon {
   color: var(--clr-dark);

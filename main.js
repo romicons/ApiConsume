@@ -7,8 +7,10 @@ const toggleDarkMode = () => {
     darkMode = !darkMode;
     if (darkMode) {
         document.body.classList.add('darkmode');
+        document.getElementById('btn-darkmode-description').innerHTML = `Light Mode`;
     } else {
         document.body.classList.remove('darkmode');
+        document.getElementById('btn-darkmode-description').innerHTML = `Dark Mode`;
     }
     localStorage.setItem('darkMode', darkMode);
 }

@@ -1,0 +1,22 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: "Cinzel", sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-image: var(--bgc-body);
+    justify-content: space-between;
+    min-height: 100vh;
+}
+
+.darkmode {
+    $clr-light: #123142;
+    $clr-dark: #20130a;
+    $clr-primary: #142026;
+    $clr-secondary: #e9f0c9;
+    $bgc-body: linear-gradient(to bottom right, #142026, #20130a);
+}

@@ -1,0 +1,21 @@
+@mixin button-format ($bg-color, $text-color, $hover-bg-color, $hover-text-color) {
+    appearance: none;
+    font-weight: bold;
+    letter-spacing: 0.25em;
+    border: none;
+    background-color: $bg-color;
+    color: $text-color;
+    font-weight: bold;
+    border: none;
+
+    &:hover {
+        cursor: pointer;
+        background-color: $hover-bg-color ;
+        color: $hover-text-color;
+    }
+
+    &:active {
+        background-color: $bg-color;
+        color: $text-color;
+    }
+}
