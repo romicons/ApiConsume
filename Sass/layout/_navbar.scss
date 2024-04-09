@@ -1,0 +1,76 @@
+nav {
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    flex-direction: column;
+    columns: 2;
+    gap: 0.5rem;
+    background-color: var(--clr-secondary);
+    color: var(--clr-dark);
+    padding-inline: 1rem;
+    padding-bottom: 0.8rem;
+    box-shadow: var(--box-shadow);
+
+    @media screen and (min-width:580px) {
+        flex-flow: row wrap;
+        height: 4.2rem;
+        gap: 1rem;
+    }
+
+    h3  {
+    display: none;
+    font-family: 'Explora';
+    font-size: 1.5rem;
+
+    @media screen and (min-width:900px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+    
+    }
+
+    #btn-darkmode {
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    svg path {
+        fill: var(--clr-dark);
+    }
+
+    &:hover {
+        color: var(--clr-accent);
+    }
+
+    &:hover svg path {
+        fill: var(--clr-accent);
+        }
+    
+    @include button-format(var(--clr-dark), var(--clr-accent), var(--clr-primary))
+    }
+
+h1 {
+    font-family: 'Cinzel', sans-serif;
+    font-size: 2.2rem;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    svg path {
+        fill: var(--clr-dark);
+    }
+
+    &:hover {
+        color: var(--clr-accent);
+    }
+
+    &:hover svg path {
+        fill: var(--clr-accent);
+    }
+}}

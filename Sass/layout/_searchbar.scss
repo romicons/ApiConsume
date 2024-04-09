@@ -1,0 +1,25 @@
+#search-form {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    gap: 1rem;
+
+    select {
+        background-color: #f0f5e1;
+        border: solid 2px var(--clr-primary);
+        border-radius: var(--border-radius);
+        padding: 0.3rem;
+        font-family: 'Cinzel';
+        font-size: 1.2rem;
+        cursor: pointer;
+
+        &:hover {
+            background-color: var(--clr-accent);
+            color: var(--clr-dark);
+        }
+
+        option {
+            font-family: 'Cinzel';
+        }
+    }
+}
