@@ -7,6 +7,7 @@
   --clr-secondary: #142026;
   --clr-accent: #3b657a;
   --bgc-body: linear-gradient(to bottom right, #f0f5e1, #e9f0c9);
+  --bgc-nav: #123142;
   --box-shadow: #021E23 0px 1px 4px;
   --border-radius: 5px;
 }
@@ -17,6 +18,7 @@
   --clr-primary: #142026;
   --clr-secondary: #e9f0c9;
   --bgc-body: linear-gradient(to bottom right, #142026, #20130a);
+  --bgc-nav: #f0f5e1;
 }
 
 * {
@@ -55,6 +57,7 @@ body {
 }
 .button:hover {
   background: rgba(100, 0, 0, 0.03);
+  cursor: pointer;
 }
 .button-horizontal, .button-vertical {
   position: absolute;
@@ -102,22 +105,21 @@ body {
 nav {
   height: auto;
   display: flex;
+  flex-flow: row wrap;
   align-items: center;
   justify-content: space-between;
   position: sticky;
-  flex-direction: column;
-  columns: 2;
-  gap: 0.5rem;
   background-color: var(--clr-secondary);
   color: var(--clr-dark);
-  padding-inline: 1rem;
-  padding-bottom: 0.8rem;
   box-shadow: var(--box-shadow);
 }
 @media screen and (min-width: 580px) {
   nav {
-    flex-flow: row wrap;
-    height: 4.2rem;
+    gap: 1rem;
+  }
+  nav div {
+    display: flex;
+    flex-direction: row;
     gap: 1rem;
   }
 }
@@ -126,23 +128,70 @@ nav h3 {
   font-family: "Explora";
   font-size: 1.5rem;
 }
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 1050px) {
   nav h3 {
     display: flex;
     justify-content: center;
     align-items: center;
   }
 }
+nav #hamb-menu {
+  padding: 0.2rem 0.5rem;
+  font-size: 2rem;
+  border-radius: var(--border-radius);
+  appearance: none;
+  letter-spacing: 0.25em;
+  background-color: transparent;
+  color: var(--clr-dark);
+  font-weight: bold;
+  border: none;
+}
+nav #hamb-menu:hover {
+  cursor: pointer;
+  color: var(--clr-accent);
+}
+nav #hamb-menu:active {
+  background-color: var(--clr-secondary);
+  color: var(--clr-accent);
+}
+@media screen and (min-width: 750px) {
+  nav #hamb-menu {
+    display: none;
+  }
+}
+nav .nav-items {
+  width: 100%;
+  display: none;
+  background-color: var(--bgc-nav);
+  padding-bottom: 1rem;
+}
+@media screen and (min-width: 750px) {
+  nav .nav-items {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    padding: 0 1rem 0 0;
+    background-color: transparent;
+    gap: 1rem;
+    width: auto;
+  }
+}
+nav .open {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
 nav #btn-darkmode {
   background-color: transparent;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 0.5rem;
+  position: relative;
   gap: 1rem;
   border-radius: var(--border-radius);
-  padding: 0.8em 1.8em;
   appearance: none;
-  border: 0;
   letter-spacing: 0.25em;
   background-color: transparent;
   color: var(--clr-dark);
