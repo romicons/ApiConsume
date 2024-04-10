@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Explora&display=swap");
 :root {
@@ -188,8 +189,8 @@ nav #btn-darkmode {
   justify-content: center;
   align-items: center;
   padding: 0.5rem;
-  position: relative;
   gap: 1rem;
+  position: relative;
   border-radius: var(--border-radius);
   appearance: none;
   letter-spacing: 0.25em;
@@ -198,22 +199,33 @@ nav #btn-darkmode {
   font-weight: bold;
   border: none;
 }
-nav #btn-darkmode svg path {
-  fill: var(--clr-dark);
-}
-nav #btn-darkmode:hover {
-  color: var(--clr-accent);
-}
-nav #btn-darkmode:hover svg path {
-  fill: var(--clr-accent);
-}
 nav #btn-darkmode:hover {
   cursor: pointer;
-  color: var(--clr-accent);
+  color: currentColor;
 }
 nav #btn-darkmode:active {
-  background-color: var(--clr-primary);
-  color: var(--clr-accent);
+  background-color: var(--clr-accent);
+  color: currentColor;
+}
+nav #btn-darkmode span {
+  position: relative;
+}
+nav #btn-darkmode span::before {
+  transition: width 0.4s ease-out, left 0.4s ease-out; /* Transición suave del ancho y de la posición izquierda */
+  height: 2px;
+  content: "";
+  position: absolute;
+  background-color: currentColor;
+  width: 100%; /* Comienza con 100% de ancho */
+  bottom: -10px;
+  left: 0; /* Comienza desde el borde izquierdo */
+}
+nav #btn-darkmode:hover span::before {
+  width: 0; /* Reduce el ancho a 0 */
+  left: 50%; /* Mueve la posición izquierda al centro */
+}
+nav svg path {
+  fill: var(--clr-dark);
 }
 nav h1 {
   font-family: "Cinzel", sans-serif;
