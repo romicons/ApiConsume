@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Explora&display=swap");
 :root {
@@ -7,6 +8,7 @@
   --clr-secondary: #142026;
   --clr-accent: #3b657a;
   --bgc-body: linear-gradient(to bottom right, #f0f5e1, #e9f0c9);
+  --bgc-nav: #123142;
   --box-shadow: #021E23 0px 1px 4px;
   --border-radius: 5px;
 }
@@ -17,13 +19,14 @@
   --clr-primary: #142026;
   --clr-secondary: #e9f0c9;
   --bgc-body: linear-gradient(to bottom right, #142026, #20130a);
+  --bgc-nav: #f0f5e1;
 }
 
 * {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
-  font-family: "Explora", sans-serif;
+  font-family: "Cinzel", sans-serif;
 }
 
 body {
@@ -32,78 +35,6 @@ body {
   background-image: var(--bgc-body);
   justify-content: space-between;
   min-height: 100vh;
-}
-
-nav {
-  height: auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: sticky;
-  flex-direction: column;
-  columns: 2;
-  gap: 0.5rem;
-  background-color: var(--clr-secondary);
-  color: var(--clr-dark);
-  padding-inline: 1rem;
-  padding-bottom: 0.8rem;
-  box-shadow: var(--box-shadow);
-}
-@media screen and (min-width: 580px) {
-  nav {
-    flex-flow: row wrap;
-    height: 4.2rem;
-    gap: 1rem;
-  }
-}
-nav h2 {
-  display: none;
-  font-size: 1.5rem;
-}
-@media screen and (min-width: 900px) {
-  nav h2 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-}
-nav #btn-darkmode {
-  appearance: none;
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-}
-nav #btn-darkmode svg path {
-  fill: var(--clr-dark);
-}
-nav #btn-darkmode:hover {
-  color: var(--clr-accent);
-}
-nav #btn-darkmode:hover svg path {
-  fill: var(--clr-accent);
-}
-nav div {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-}
-
-h1 {
-  font-family: "Cinzel", sans-serif;
-  font-size: 2.2rem;
-  display: flex;
-  align-content: center;
-  align-items: center;
-  cursor: pointer;
-}
-h1 svg path {
-  fill: var(--clr-dark);
-}
-h1:hover {
-  color: var(--clr-accent);
-}
-h1:hover svg path {
-  fill: var(--clr-accent);
 }
 
 .button {
@@ -120,7 +51,6 @@ h1:hover svg path {
   font-family: "Cinzel";
   letter-spacing: 0.25em;
   outline: none;
-  cursor: pointer;
   font-weight: bold;
   border-radius: 0;
   box-shadow: inset 0 0 0 var(--border-size) currentcolor;
@@ -128,6 +58,7 @@ h1:hover svg path {
 }
 .button:hover {
   background: rgba(100, 0, 0, 0.03);
+  cursor: pointer;
 }
 .button-horizontal, .button-vertical {
   position: absolute;
@@ -170,6 +101,148 @@ h1:hover svg path {
 }
 .button:hover .button-vertical {
   transform: scaleY(0);
+}
+
+nav {
+  height: auto;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  background-color: var(--clr-secondary);
+  color: var(--clr-dark);
+  box-shadow: var(--box-shadow);
+}
+@media screen and (min-width: 580px) {
+  nav {
+    gap: 1rem;
+  }
+  nav div {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+  }
+}
+nav h3 {
+  display: none;
+  font-family: "Explora";
+  font-size: 1.5rem;
+}
+@media screen and (min-width: 1050px) {
+  nav h3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+nav #hamb-menu {
+  padding: 0.2rem 0.5rem;
+  font-size: 2rem;
+  border-radius: var(--border-radius);
+  appearance: none;
+  letter-spacing: 0.25em;
+  background-color: transparent;
+  color: var(--clr-dark);
+  font-weight: bold;
+  border: none;
+}
+nav #hamb-menu:hover {
+  cursor: pointer;
+  color: var(--clr-accent);
+}
+nav #hamb-menu:active {
+  background-color: var(--clr-secondary);
+  color: var(--clr-accent);
+}
+@media screen and (min-width: 750px) {
+  nav #hamb-menu {
+    display: none;
+  }
+}
+nav .nav-items {
+  width: 100%;
+  display: none;
+  background-color: var(--bgc-nav);
+  padding-bottom: 1rem;
+}
+@media screen and (min-width: 750px) {
+  nav .nav-items {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    padding: 0 1rem 0 0;
+    background-color: transparent;
+    gap: 1rem;
+    width: auto;
+  }
+}
+nav .open {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+nav #btn-darkmode {
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+  gap: 1rem;
+  position: relative;
+  border-radius: var(--border-radius);
+  appearance: none;
+  letter-spacing: 0.25em;
+  background-color: transparent;
+  color: var(--clr-dark);
+  font-weight: bold;
+  border: none;
+}
+nav #btn-darkmode:hover {
+  cursor: pointer;
+  color: currentColor;
+}
+nav #btn-darkmode:active {
+  background-color: var(--clr-accent);
+  color: currentColor;
+}
+nav #btn-darkmode span {
+  position: relative;
+}
+nav #btn-darkmode span::before {
+  transition: width 0.4s ease-out, left 0.4s ease-out; /* Transición suave del ancho y de la posición izquierda */
+  height: 2px;
+  content: "";
+  position: absolute;
+  background-color: currentColor;
+  width: 100%; /* Comienza con 100% de ancho */
+  bottom: -10px;
+  left: 0; /* Comienza desde el borde izquierdo */
+}
+nav #btn-darkmode:hover span::before {
+  width: 0; /* Reduce el ancho a 0 */
+  left: 50%; /* Mueve la posición izquierda al centro */
+}
+nav svg path {
+  fill: var(--clr-dark);
+}
+nav h1 {
+  font-family: "Cinzel", sans-serif;
+  font-size: 2.2rem;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+nav h1 svg path {
+  fill: var(--clr-dark);
+}
+nav h1:hover {
+  color: var(--clr-accent);
+}
+nav h1:hover svg path {
+  fill: var(--clr-accent);
 }
 
 #search-form {
@@ -215,6 +288,7 @@ footer ul {
 }
 footer p {
   font-size: 1.5rem;
+  font-family: "Explora";
 }
 footer .footer-icon {
   color: var(--clr-dark);

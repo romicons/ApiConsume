@@ -1,0 +1,125 @@
+nav {
+    height: auto;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    background-color: var(--clr-secondary);
+    color: var(--clr-dark);
+    box-shadow: var(--box-shadow);
+
+    @media screen and (min-width:580px) {
+        gap: 1rem;
+
+        div {
+            display: flex;
+            flex-direction: row;
+            gap: 1rem;
+            }
+    }
+
+    h3  {
+    display: none;
+    font-family: 'Explora';
+    font-size: 1.5rem;
+
+    @media screen and (min-width:1050px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+    
+    }
+
+    #hamb-menu {
+    padding: 0.2rem 0.5rem;
+    font-size: 2rem;
+
+    @include button-format(var(--clr-dark), var(--clr-accent), var(--clr-secondary));
+    
+    @media screen and (min-width:750px) {
+        display: none;
+    }
+    }
+
+    .nav-items {
+    width: 100%;
+    display: none;
+    background-color: var(--bgc-nav);
+    padding-bottom: 1rem;
+
+    @media screen and (min-width:750px) {
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        padding: 0 1rem 0 0;
+        background-color: transparent;
+        gap: 1rem;
+        width: auto;
+    }
+    }
+
+    .open {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    #btn-darkmode {
+        background-color: transparent;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0.5rem;
+        gap: 1rem;
+        position: relative;
+
+        @include button-format(var(--clr-dark), currentColor, var(--clr-accent));
+    }
+    
+    #btn-darkmode span {
+        position: relative;
+    
+        &::before {
+            transition: width 0.4s ease-out, left 0.4s ease-out; /* Transición suave del ancho y de la posición izquierda */
+            height: 2px;
+            content: '';
+            position: absolute;
+            background-color: currentColor;
+            width: 100%; /* Comienza con 100% de ancho */
+            bottom: -10px;
+            left: 0; /* Comienza desde el borde izquierdo */
+        }
+    }
+    
+    #btn-darkmode:hover span::before {
+        width: 0; /* Reduce el ancho a 0 */
+        left: 50%; /* Mueve la posición izquierda al centro */
+    }
+    
+    svg path {
+        fill: var(--clr-dark);
+    }
+    
+h1 {
+    font-family: 'Cinzel', sans-serif;
+    font-size: 2.2rem;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    svg path {
+        fill: var(--clr-dark);
+    }
+
+    &:hover {
+        color: var(--clr-accent);
+    }
+
+    &:hover svg path {
+        fill: var(--clr-accent);
+    }
+}}

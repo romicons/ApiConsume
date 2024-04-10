@@ -1,0 +1,19 @@
+@mixin button-format ($text-color, $hover-text-color, $bg-active-color) {
+    border-radius: var(--border-radius);
+	appearance: none;
+	letter-spacing: .25em;
+    background-color: transparent;
+    color: $text-color;
+    font-weight: bold;
+    border: none;
+
+    &:hover {
+        cursor: pointer;
+        color: $hover-text-color;
+    }
+
+    &:active {
+        background-color: $bg-active-color;
+        color: $hover-text-color;
+    }
+}
