@@ -2,11 +2,40 @@
     display: flex;
     flex-flow: column wrap;
     justify-content: center;
-    align-content: center;
     gap: 1rem;
 
-    select {
+    @media screen and (min-width:1000px) {
+        flex-flow: row wrap;
+    }
+
+    h2 {
         width: 100%;
+        text-align: center;
+        color: var(--bgc-nav);
+    }
+    div {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        gap: 1rem;
+    }
+
+    div:nth-child(1) {
+        flex-flow: column wrap;
+
+        @media screen and (min-width:800px) {
+            flex-flow: row wrap;
+        }
+    }
+
+    div:nth-child(2) {
+        flex-flow: row wrap;
+    }
+
+    select {
+        width: 80%;
+        display: flex;
+        justify-content: center;
         background-color: #f0f5e1;
         border: solid 2px var(--clr-primary);
         border-radius: var(--border-radius);
@@ -19,9 +48,9 @@
             background-color: var(--clr-accent);
             color: var(--clr-dark);
         }
-    }
 
-    #house-search, #gender-search, #state-search {
-        display: none;
+        @media screen and (min-width:700px) {
+            width: auto;
+        }
     }
 }

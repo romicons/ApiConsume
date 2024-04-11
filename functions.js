@@ -12,10 +12,8 @@ const toggleMobileNav = () => {
     const navItems = document.querySelector('.nav-items');
     const navBtn = document.getElementById('hamb-menu');
     
-    // Alternar la clase 'open' en navItems
     navItems.classList.toggle('open');
 
-    // Cambiar el ícono del botón de hamburguesa según el estado del menú
     if (navItems.classList.contains('open')) {
         navBtn.innerHTML = '<i class="fa-solid fa-xmark"></i>';
     } else {
