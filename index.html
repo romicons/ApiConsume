@@ -51,41 +51,53 @@
         <main>
             <section>
                 <form id="search-form">
-                    <select name="SearchBy" id="search-by">
-                        <option value="SearchBy">Search by...</option>
-                        <option value="House">House</option>
-                        <option value="Gender">Gender</option>
-                        <option value="State">State</option>
-                    </select>
-            
-                    <select name="House" id="house-search">
-                        <option value="House">House...</option>
-                        <option value="Baratheon">Baratheon</option>
-                        <option value="Greyjoy">Greyjoy</option>
-                        <option value="Lannister">Lannister</option>
-                        <option value="Martell">Martell</option>
-                        <option value="Stark">Stark</option>
-                        <option value="Targaryen">Targaryen</option>
-                        <option value="Tully">Tully</option>
-                        <option value="Tyrell">Tyrell</option>
-                    </select>
+                    <div>
+                        <select name="SearchBy" id="search-by">
+                            <option value="SearchBy">Search by...</option>
+                            <option value="House">House</option>
+                            <option value="Gender">Gender</option>
+                            <option value="State">State</option>
+                        </select>
+                
+                        <select name="House" id="house-search">
+                            <option value="House">House...</option>
+                            <option value="Baratheon">Baratheon</option>
+                            <option value="Frey">Frey</option>
+                            <option value="Greyjoy">Greyjoy</option>
+                            <option value="Lannister">Lannister</option>
+                            <option value="Martell">Martell</option>
+                            <option value="Stark">Stark</option>
+                            <option value="Targaryen">Targaryen</option>
+                            <option value="Tully">Tully</option>
+                            <option value="Tyrell">Tyrell</option>
+                        </select>
 
-                    <select name="Gender" id="gender-search">
-                        <option value="Gender">Gender...</option>
-                        <option value="Male">Male</option>
-                        <option value="Female">Female</option>
-                        <option value="Other/Unknown">Other/Unknown</option>
-                    </select>
+                        <select name="Gender" id="gender-search">
+                            <option value="Gender">Gender...</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other/Unknown">Other/Unknown</option>
+                        </select>
+                        
+                        <select name="State" id="state-search">
+                            <option value="State">State...</option>
+                            <option value="Alive">Alive</option>
+                            <option value="Dead">Dead</option>
+                            <option value="Unknown">Unknown</option>
+                        </select>
+                    </div>
                     
-                    <select name="State" id="state-search">
-                        <option value="State">State...</option>
-                        <option value="Alive">Alive</option>
-                        <option value="Dead">Dead</option>
-                        <option value="Unknown">Unknown</option>
-                    </select>
-                    
-                    <input type="button" value="Search" id="btn-search" /> 
-                    <input type="button" value="Clear" id="btn-cancel-search" />
+                    <div>
+                        <button type="button" value="Search" id="btn-search" class="positive-btn">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            Search
+                        </button>
+                        
+                        <button type="button" value="Clear" id="btn-cancel-search" class="negative-btn">
+                            <i class="fa-solid fa-arrows-rotate"></i>
+                            Clear
+                        </button>
+                    </div>
                 </form>
             </section>
             

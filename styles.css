@@ -103,6 +103,54 @@ body {
   transform: scaleY(0);
 }
 
+.positive-btn {
+  border-radius: var(--border-radius);
+  appearance: none;
+  letter-spacing: 0.25em;
+  background-color: transparent;
+  color: var(--clr-dark);
+  font-weight: bold;
+  border: none;
+  border: 2px solid var(--bgc-nav);
+  padding: 0.5rem 1.5rem;
+  background-color: var(--clr-secondary);
+}
+.positive-btn:hover {
+  cursor: pointer;
+  color: var(--clr-accent);
+}
+.positive-btn:active {
+  background-color: var(--clr-primary);
+  color: var(--clr-accent);
+}
+.positive-btn:hover {
+  border: 2px solid var(--clr-accent);
+}
+
+.negative-btn {
+  border-radius: var(--border-radius);
+  appearance: none;
+  letter-spacing: 0.25em;
+  background-color: transparent;
+  color: var(--clr-light);
+  font-weight: bold;
+  border: none;
+  border: 2px solid var(--bgc-nav);
+  padding: 0.5rem 1.5rem;
+  background-color: #fafcf9;
+}
+.negative-btn:hover {
+  cursor: pointer;
+  color: var(--clr-accent);
+}
+.negative-btn:active {
+  background-color: var(--clr-secondary);
+  color: var(--clr-accent);
+}
+.negative-btn:hover {
+  border: 2px solid var(--clr-accent);
+}
+
 nav {
   height: auto;
   display: flex;
@@ -247,15 +295,17 @@ nav h1:hover svg path {
 
 #search-form {
   display: flex;
+  flex-flow: column wrap;
   justify-content: center;
   align-content: center;
   gap: 1rem;
 }
 #search-form select {
+  width: 100%;
   background-color: #f0f5e1;
   border: solid 2px var(--clr-primary);
   border-radius: var(--border-radius);
-  padding: 0.3rem;
+  padding: 0.5rem 1.5rem;
   font-family: "Cinzel";
   font-size: 1.2rem;
   cursor: pointer;
@@ -264,8 +314,8 @@ nav h1:hover svg path {
   background-color: var(--clr-accent);
   color: var(--clr-dark);
 }
-#search-form select option {
-  font-family: "Cinzel";
+#search-form #house-search, #search-form #gender-search, #search-form #state-search {
+  display: none;
 }
 
 footer {
