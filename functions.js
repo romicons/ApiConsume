@@ -31,9 +31,11 @@ const toggleDarkMode = () => {
     if (darkMode) {
         document.body.classList.add('darkmode');
         document.getElementById('darkmode-btn-description').innerHTML = `Light Mode`
+        document.getElementById('render-spinner').style.filter = 'invert(1)';
     } else {
         document.body.classList.remove('darkmode');
         document.getElementById('darkmode-btn-description').innerHTML = `Dark Mode`
+        document.getElementById('render-spinner').style.filter = 'none';
     }
     localStorage.setItem('darkMode', darkMode);
 }

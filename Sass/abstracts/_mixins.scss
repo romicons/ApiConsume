@@ -17,3 +17,7 @@
         color: $hover-text-color;
     }
 }
+
+@mixin card-hover ($size) {
+    transform: scale($size);
+}

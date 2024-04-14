@@ -24,7 +24,7 @@ nav {
     font-family: 'Explora';
     font-size: 1.5rem;
 
-    @media screen and (min-width:1050px) {
+    @media screen and (min-width:1400px) {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -49,7 +49,7 @@ nav {
     background-color: var(--bgc-nav);
     padding-bottom: 1rem;
 
-    @media screen and (min-width:750px) {
+    @media screen and (min-width:870px) {
         display: flex;
         flex-flow: row wrap;
         align-items: center;
@@ -64,17 +64,16 @@ nav {
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 0.5rem;
+        padding-top: 0.3rem;
+        gap: 1.5rem;
     }
 
     #btn-darkmode {
-        background-color: transparent;
         display: flex;
         justify-content: center;
         align-items: center;
         padding: 0.5rem;
         gap: 1rem;
-        position: relative;
 
         @include button-format(var(--clr-dark), currentColor, var(--clr-accent));
     }
@@ -83,20 +82,20 @@ nav {
         position: relative;
     
         &::before {
-            transition: width 0.4s ease-out, left 0.4s ease-out; /* Transición suave del ancho y de la posición izquierda */
+            transition: width 0.4s ease-out, left 0.4s ease-out; 
             height: 2px;
             content: '';
             position: absolute;
             background-color: currentColor;
-            width: 100%; /* Comienza con 100% de ancho */
+            width: 100%; 
             bottom: -10px;
-            left: 0; /* Comienza desde el borde izquierdo */
+            left: 0; 
         }
     }
     
     #btn-darkmode:hover span::before {
-        width: 0; /* Reduce el ancho a 0 */
-        left: 50%; /* Mueve la posición izquierda al centro */
+        width: 0; 
+        left: 50%; 
     }
     
     svg path {

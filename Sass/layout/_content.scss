@@ -1,0 +1,9 @@
+.content {
+    display: flex;
+    flex-flow: column wrap;
+    flex-basis: 1;
+    columns: 3;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
