@@ -178,7 +178,7 @@ main {
   flex-flow: column wrap;
   gap: 1rem;
   padding: 1rem;
-  max-height: 22rem;
+  max-height: 25rem;
   min-width: 18rem;
   border: none;
   background-color: var(--clr-secondary);
@@ -288,7 +288,7 @@ nav #hamb-menu:active {
   background-color: var(--clr-secondary);
   color: var(--clr-accent);
 }
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 889px) {
   nav #hamb-menu {
     display: none;
   }
@@ -299,7 +299,7 @@ nav .nav-items {
   background-color: var(--bgc-nav);
   padding-bottom: 1rem;
 }
-@media screen and (min-width: 870px) {
+@media screen and (min-width: 890px) {
   nav .nav-items {
     display: flex;
     flex-flow: row wrap;
@@ -441,6 +441,11 @@ nav h1:hover svg path {
   justify-content: center;
   align-items: center;
   gap: 2rem;
+}
+@media screen and (min-width: 890px) {
+  .content {
+    flex-flow: row wrap;
+  }
 }
 
 footer {
