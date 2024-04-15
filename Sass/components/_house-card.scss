@@ -31,7 +31,7 @@
     }
 
     button {
-        @include button-format(var(--clr-dark), var(--clr-hover-btn), var(--clr-accent));
+        @include button-format(var(--clr-dark), var(--clr-hover-btn), var(--clr-primary));
     
         letter-spacing: 0.1em;
         padding: 0.5rem;

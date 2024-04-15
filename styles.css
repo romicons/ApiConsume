@@ -247,7 +247,7 @@ main {
   color: var(--clr-hover-btn);
 }
 .house-card button:active {
-  background-color: var(--clr-accent);
+  background-color: var(--clr-primary);
   color: var(--clr-hover-btn);
 }
 .house-card button span {
@@ -266,6 +266,96 @@ main {
 .house-card button:hover span::before {
   width: 0;
   left: 50%;
+}
+
+.house-form {
+  display: flex;
+  justify-content: space-between;
+  flex-flow: column wrap;
+  padding: 1rem;
+  width: 90%;
+  border: none;
+  background-color: var(--clr-secondary);
+  color: var(--clr-dark);
+  box-shadow: var(--box-shadow);
+  border-radius: var(--border-radius);
+}
+@media screen and (min-width: 1000px) {
+  .house-form {
+    gap: 1rem;
+    padding-inline: 2rem;
+    width: 70%;
+  }
+}
+.house-form h2 {
+  text-shadow: var(--clr-accent) 1px 1px;
+  text-align: center;
+}
+.house-form label {
+  font-size: 1.125rem;
+  padding-block: 0.3rem;
+}
+.house-form input {
+  width: 100%;
+  border-radius: var(--border-radius);
+  border: solid 2px var(--clr-primary);
+  padding: 0.5rem 1.5rem;
+  background-color: #f0f5e1;
+}
+.house-form input:hover {
+  background-color: var(--clr-accent);
+  color: var(--clr-dark);
+}
+.house-form input:active {
+  background-color: var(--clr-accent);
+}
+.house-form #new-house-color {
+  cursor: pointer;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  padding: 0;
+}
+.house-form div {
+  display: grid;
+  gap: 0.2rem;
+}
+@media screen and (min-width: 1000px) {
+  .house-form div:nth-child(2), .house-form div:nth-child(3) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    gap: 1rem;
+  }
+}
+.house-form div:nth-child(3) div:nth-child(1) {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 0.5rem;
+}
+@media screen and (min-width: 1000px) {
+  .house-form div:nth-child(3) div:nth-child(1) {
+    flex-direction: row;
+    width: 50%;
+  }
+}
+.house-form div:nth-child(3) div:nth-child(2) {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 0.5rem;
+}
+@media screen and (min-width: 1000px) {
+  .house-form div:nth-child(3) div:nth-child(2) {
+    width: 50%;
+  }
+}
+.house-form div:nth-child(4) {
+  display: flex;
+  padding-top: 1rem;
+  justify-content: center;
+  gap: 1rem;
 }
 
 .reduced-character-card {
@@ -479,7 +569,7 @@ main {
   border: 0.5em double #757575;
 }
 
-#add-character-form {
+.character-form {
   display: flex;
   justify-content: space-between;
   flex-flow: column wrap;
@@ -492,38 +582,38 @@ main {
   border-radius: var(--border-radius);
 }
 @media screen and (min-width: 890px) {
-  #add-character-form {
+  .character-form {
     gap: 1rem;
   }
 }
 @media screen and (min-width: 890px) {
-  #add-character-form {
+  .character-form {
     width: 70%;
   }
 }
-#add-character-form h2 {
+.character-form h2 {
   text-shadow: var(--clr-accent) 1px 1px;
   text-align: center;
 }
-#add-character-form label {
+.character-form label {
   font-size: 1.125rem;
   padding-block: 0.3rem;
 }
-#add-character-form input {
+.character-form input {
   width: 100%;
   border-radius: var(--border-radius);
   border: solid 2px var(--clr-primary);
   padding: 0.5rem 1.5rem;
   background-color: #f0f5e1;
 }
-#add-character-form input:hover {
+.character-form input:hover {
   background-color: var(--clr-accent);
   color: var(--clr-dark);
 }
-#add-character-form input:active {
+.character-form input:active {
   background-color: var(--clr-accent);
 }
-#add-character-form select {
+.character-form select {
   width: 80%;
   display: flex;
   justify-content: center;
@@ -534,21 +624,21 @@ main {
   cursor: pointer;
   width: 100%;
 }
-#add-character-form select:hover {
+.character-form select:hover {
   background-color: var(--clr-accent);
   color: var(--clr-dark);
 }
 @media screen and (min-width: 700px) {
-  #add-character-form select {
+  .character-form select {
     width: auto;
   }
 }
 @media screen and (min-width: 890px) {
-  #add-character-form select {
-    width: 40%;
+  .character-form select {
+    width: 45%;
   }
 }
-#add-character-form textarea {
+.character-form textarea {
   width: 100%;
   resize: none;
   border-radius: var(--border-radius);
@@ -557,26 +647,26 @@ main {
   background-color: #f0f5e1;
   min-height: 6rem;
 }
-#add-character-form textarea:hover {
+.character-form textarea:hover {
   background-color: var(--clr-accent);
   color: var(--clr-dark);
 }
-#add-character-form textarea:active {
+.character-form textarea:active {
   background-color: var(--clr-accent);
 }
-#add-character-form div {
+.character-form div {
   display: grid;
   gap: 0.2rem;
 }
 @media screen and (min-width: 890px) {
-  #add-character-form div:nth-child(2), #add-character-form div:nth-child(3) {
+  .character-form div:nth-child(2), .character-form div:nth-child(3) {
     display: flex;
     justify-content: space-between;
     flex-direction: row;
     gap: 1rem;
   }
 }
-#add-character-form div:nth-child(7) {
+.character-form div:nth-child(7) {
   display: flex;
   padding-top: 1rem;
   justify-content: center;

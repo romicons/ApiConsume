@@ -39,3 +39,9 @@ const toggleDarkMode = () => {
     }
     localStorage.setItem('darkMode', darkMode);
 }
+
+//      CHANGE CARD BORDER 
+
+const setInnerShadowColor = (element, color) => {
+    element.style.boxShadow = `inset 0 0 5px 4px ${color}`;
+}

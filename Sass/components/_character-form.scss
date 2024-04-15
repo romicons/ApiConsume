@@ -1,0 +1,67 @@
+.character-form {
+    display: flex;
+    justify-content: space-between;
+    flex-flow: column wrap;
+    padding: 1rem;
+    width: 90%;
+    border: none;
+    background-color: var(--clr-secondary);
+    color: var(--clr-dark);
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius);
+
+    @media screen and (min-width:890px) {
+        gap: 1rem;
+    }
+    
+    @media screen and (min-width:890px) {
+        width: 70%;
+    }
+
+    h2 {
+        @include title-text-shadow;
+        text-align: center;
+    }
+
+    label {
+        @include label-format;
+    }
+
+    input {
+        @include input-format;
+    }
+
+    select {
+        @include select-format;
+        width: 100%;
+
+        @media screen and (min-width:890px) {
+            width: 45%;
+        }
+    }
+
+    textarea {
+        @include textarea-format;
+    }
+
+    div {
+        display: grid;
+        gap: 0.2rem;
+    }
+
+    div:nth-child(2), div:nth-child(3) {
+        @media screen and (min-width:890px) {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+            gap: 1rem;
+        }
+    }
+
+    div:nth-child(7) {
+        display: flex;
+        padding-top: 1rem;
+        justify-content: center;
+        gap: 1rem;
+    }
+}

@@ -1,4 +1,4 @@
-#add-character-form {
+.house-form {
     display: flex;
     justify-content: space-between;
     flex-flow: column wrap;
@@ -10,11 +10,9 @@
     box-shadow: var(--box-shadow);
     border-radius: var(--border-radius);
 
-    @media screen and (min-width:890px) {
+    @media screen and (min-width:1000px) {
         gap: 1rem;
-    }
-    
-    @media screen and (min-width:890px) {
+        padding-inline: 2rem;
         width: 70%;
     }
 
@@ -31,17 +29,12 @@
         @include input-format;
     }
 
-    select {
-        @include select-format;
-        width: 100%;
-
-        @media screen and (min-width:890px) {
-            width: 40%;
-        }
-    }
-
-    textarea {
-        @include textarea-format;
+    #new-house-color {
+        cursor: pointer;
+        width: 2rem; 
+        height: 2rem; 
+        border-radius: 50%; 
+        padding: 0; 
     }
 
     div {
@@ -50,15 +43,38 @@
     }
 
     div:nth-child(2), div:nth-child(3) {
-        @media screen and (min-width:890px) {
+        @media screen and (min-width:1000px) {
             display: flex;
             justify-content: space-between;
+            align-items: center;
             flex-direction: row;
             gap: 1rem;
         }
     }
 
-    div:nth-child(7) {
+    div:nth-child(3) div:nth-child(1) {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding-top: 0.5rem;
+
+        @media screen and (min-width:1000px) {
+            flex-direction: row;
+            width: 50%;
+        }
+    }
+
+    div:nth-child(3) div:nth-child(2) {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 0.5rem;
+
+        @media screen and (min-width:1000px) {
+            width: 50%;
+        }
+    }
+
+    div:nth-child(4) {
         display: flex;
         padding-top: 1rem;
         justify-content: center;
