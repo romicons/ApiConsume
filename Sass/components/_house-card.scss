@@ -42,6 +42,6 @@
     }
 
     button:hover span::before {
-        @include span-animation-style;
+        @include span-animation;
     }
 }

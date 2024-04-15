@@ -38,23 +38,6 @@
     }
 
     select {
-        width: 80%;
-        display: flex;
-        justify-content: center;
-        background-color: #f0f5e1;
-        border: solid 2px var(--clr-primary);
-        border-radius: var(--border-radius);
-        padding: 0.5rem 1.5rem;
-        font-family: 'Cinzel';
-        cursor: pointer;
-
-        &:hover {
-            background-color: var(--clr-accent);
-            color: var(--clr-dark);
-        }
-
-        @media screen and (min-width:700px) {
-            width: auto;
-        }
+        @include select-format;
     }
 }

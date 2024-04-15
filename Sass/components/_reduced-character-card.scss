@@ -7,13 +7,21 @@
     padding: 1rem;
     min-height: 36rem;
     max-height: 45rem;
-    min-width: 18rem;
-    max-width: 30rem;
+    width: 90%;
     border: none;
     background-color: var(--clr-secondary);
     color: var(--clr-dark);
     box-shadow: var(--box-shadow);
     border-radius: var(--border-radius);
+
+    @media screen and (min-width:600px) {
+        min-width: 18rem;
+        max-width: 30rem;
+    }
+
+    &:hover {
+        @include card-hover(1.03);
+    }
 
     h2 {
         @include title-text-shadow;

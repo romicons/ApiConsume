@@ -121,24 +121,7 @@
                             <span>View characters</span>
                         </button>
                     </div>
-                    <div class="house-card">
-                        <h2>House tittle</h2>
-                        <img src="assets/Baratheon-Emblem.webp" alt="house-card">
-                        <h3>Hear me Roar!</h3>
-                        <button>
-                            <i class="fa-solid fa-arrow-right-to-bracket"></i>
-                            View characters
-                        </button>
-                    </div>
-                    <div class="house-card">
-                        <h2>House tittle</h2>
-                        <img src="assets/Baratheon-Emblem.webp" alt="house-card">
-                        <h3>Hear me Roar!</h3>
-                        <button>
-                            <i class="fa-solid fa-arrow-right-to-bracket"></i>
-                            View characters
-                        </button>
-                    </div>
+                    
                     <div class="reduced-character-card">
                         <div>
                             <div class="header-card">
@@ -156,40 +139,7 @@
                             </button>
                         </div>
                     </div>
-                    <div class="reduced-character-card">
-                        <div>
-                            <div class="header-card">
-                                <h2>Cersei Lannister</h2>
-                                <img src="https://i.pinimg.com/originals/f5/14/3c/f5143cb6a0310dbd114d444675c70532.jpg" alt="house-card">
-                            </div>
-                            <div>
-                                <p>As the daughter of Tywin Lannister and Joanna Lannister, Cersei is driven by a fierce loyalty to her family and an unyielding ambition for power. Possessing a sharp intellect and a captivating charm, she navigates the treacherous waters of court politics with calculated precision. Currently holding the title of Queen Regent, Cersei's ascent to power is marked by her ruthless determination to secure her family's position on the Iron Throne. However, beneath her regal facade lies a woman consumed by paranoia and vengeance, willing to do whatever it takes to protect her children and maintain her grip on authority.</p>
-                            </div>
-                        </div>
-                        <div>
-                            <button>
-                                <i class="fa-solid fa-arrow-right-to-bracket"></i>
-                                <span>View more details</span>
-                            </button>
-                     </div>
-                    </div>
-                    <div class="reduced-character-card">
-                        <div>
-                            <div class="header-card">
-                                <h2>Daenerys Targaryen</h2>
-                                <img src="https://i.pinimg.com/564x/4f/b7/18/4fb71872aff4715e201e1b495f990df9.jpg" alt="house-card">
-                            </div>
-                            <div>
-                                <p>The last surviving member of House Targaryen, was born in exile. Daenerys grew from a timid and powerless young girl into a formidable leader and dragonrider. Her journey is marked by resilience, determination, and a fervent desire to reclaim the Iron Throne and restore her family's dynasty. Throughout her quest for power, she faces numerous trials and challenges, including political intrigue, betrayal, and the harsh realities of conquest and governance. Yet, her ultimate goal remains unchanged: to break the wheel of oppression and tyranny in Westeros and forge a better world for herself and her people.</p>
-                            </div>
-                        </div>
-                        <div>
-                            <button>
-                                <i class="fa-solid fa-arrow-right-to-bracket"></i>
-                                <span>View more details</span>
-                            </button>
-                        </div>
-                    </div>-->
+                    
                     <div class="extended-character-card">
                             <div class="character-info-card">
                                 <div>
@@ -217,16 +167,82 @@
                                 </p>
                             </div>
                             <div>
-                                <button class="edit-btn">
-                                    <i class="fa-solid fa-pen"></i>
-                                    <span>Edit</span>
-                                </button>
                                 <button class="negative-btn">
                                     <i class="fa-solid fa-trash"></i>
                                     <span>Delete</span>
                                 </button>
+                                <button class="edit-btn">
+                                    <i class="fa-solid fa-pen"></i>
+                                    <span>Edit</span>
+                                </button>
                             </div>
                     </div>
+                -->
+                    <form id="add-character-form">
+                        <h2>Add Character</h2>
+                        <div>
+                            <label for="new-character-name">
+                                Name
+                            </label>
+                            <input type="text" id="new-character-name">
+                            <label for="new-character-house">
+                                House
+                            </label>
+                            <select id="new-character-house">
+                                <option>Choose...</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="new-character-gender">
+                                Gender
+                            </label>
+                            <select id="new-character-gender">
+                                <option>Choose...</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Other/Unknown">Other/Unknown</option>
+                            </select>
+                            <label for="new-character-state">
+                                State
+                            </label>
+                            <select id="new-character-state">
+                                <option>Choose...</option>
+                                <option value="Alive">Alive</option>
+                                <option value="Dead">Dead</option>
+                                <option value="Unknown">Unknown</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="new-character-avatar">
+                                Portrait
+                            </label>
+                            <input type="url" id="new-character-avatar">
+                        </div>
+                        <div>
+                            <label for="new-character-description">
+                                Description
+                            </label>
+                            <textarea id="new-character-description"></textarea>
+                        </div>
+                        <div>
+                            <label for="new-character-biography">
+                                Biography
+                            </label>
+                            <textarea id="new-character-biography"></textarea>
+                        </div>
+                        <div>
+                            <button class="negative-btn">
+                                <i class="fa-solid fa-xmark"></i>
+                                <span>Cancel</span>
+                            </button>
+                            <button class="edit-btn">
+                                <i class="fa-solid fa-check"></i>
+                                <span>Save</span>
+                            </button>
+                        </div>
+                        
+                    </form>
+
                    
                 </div>
             </section>

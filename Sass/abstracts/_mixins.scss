@@ -18,6 +18,67 @@
     }
 }
 
+@mixin label-format {
+    font-size: 1.125rem;
+    padding-block: 0.3rem;
+}
+
+@mixin input-format {
+    width: 100%;
+    border-radius: var(--border-radius);
+    border: solid 2px var(--clr-primary);
+    padding: 0.5rem 1.5rem;
+    background-color: #f0f5e1;
+
+    &:hover {
+        background-color: var(--clr-accent);
+        color: var(--clr-dark);
+    }
+
+    &:active {
+        background-color: var(--clr-accent);
+    }
+}
+
+@mixin select-format {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    background-color: #f0f5e1;
+    border: solid 2px var(--clr-primary);
+    border-radius: var(--border-radius);
+    padding: 0.5rem 1.5rem;
+    cursor: pointer;
+
+    &:hover {
+        background-color: var(--clr-accent);
+        color: var(--clr-dark);
+    }
+
+    @media screen and (min-width:700px) {
+        width: auto;
+    }
+}
+
+@mixin textarea-format {
+    width: 100%;
+    resize: none;
+    border-radius: var(--border-radius);
+    border: solid 2px var(--clr-primary);
+    padding: 0.5rem 1.5rem;
+    background-color: #f0f5e1;
+    min-height: 6rem;
+
+    &:hover {
+        background-color: var(--clr-accent);
+        color: var(--clr-dark);
+    }
+
+    &:active {
+        background-color: var(--clr-accent);
+    }
+}
+
 @mixin card-hover ($size) {
     transform: scale($size);
 }

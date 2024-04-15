@@ -264,17 +264,8 @@ main {
   left: 0;
 }
 .house-card button:hover span::before {
-  position: relative;
-}
-.house-card button:hover span::before::before {
-  transition: width 0.4s ease-out, left 0.4s ease-out;
-  height: 2px;
-  content: "";
-  position: absolute;
-  background-color: currentColor;
-  width: 100%;
-  bottom: -10px;
-  left: 0;
+  width: 0;
+  left: 50%;
 }
 
 .reduced-character-card {
@@ -286,13 +277,21 @@ main {
   padding: 1rem;
   min-height: 36rem;
   max-height: 45rem;
-  min-width: 18rem;
-  max-width: 30rem;
+  width: 90%;
   border: none;
   background-color: var(--clr-secondary);
   color: var(--clr-dark);
   box-shadow: var(--box-shadow);
   border-radius: var(--border-radius);
+}
+@media screen and (min-width: 600px) {
+  .reduced-character-card {
+    min-width: 18rem;
+    max-width: 30rem;
+  }
+}
+.reduced-character-card:hover {
+  transform: scale(1.03);
 }
 .reduced-character-card h2 {
   text-shadow: var(--clr-accent) 1px 1px;
@@ -480,6 +479,110 @@ main {
   border: 0.5em double #757575;
 }
 
+#add-character-form {
+  display: flex;
+  justify-content: space-between;
+  flex-flow: column wrap;
+  padding: 1rem;
+  width: 90%;
+  border: none;
+  background-color: var(--clr-secondary);
+  color: var(--clr-dark);
+  box-shadow: var(--box-shadow);
+  border-radius: var(--border-radius);
+}
+@media screen and (min-width: 890px) {
+  #add-character-form {
+    gap: 1rem;
+  }
+}
+@media screen and (min-width: 890px) {
+  #add-character-form {
+    width: 70%;
+  }
+}
+#add-character-form h2 {
+  text-shadow: var(--clr-accent) 1px 1px;
+  text-align: center;
+}
+#add-character-form label {
+  font-size: 1.125rem;
+  padding-block: 0.3rem;
+}
+#add-character-form input {
+  width: 100%;
+  border-radius: var(--border-radius);
+  border: solid 2px var(--clr-primary);
+  padding: 0.5rem 1.5rem;
+  background-color: #f0f5e1;
+}
+#add-character-form input:hover {
+  background-color: var(--clr-accent);
+  color: var(--clr-dark);
+}
+#add-character-form input:active {
+  background-color: var(--clr-accent);
+}
+#add-character-form select {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  background-color: #f0f5e1;
+  border: solid 2px var(--clr-primary);
+  border-radius: var(--border-radius);
+  padding: 0.5rem 1.5rem;
+  cursor: pointer;
+  width: 100%;
+}
+#add-character-form select:hover {
+  background-color: var(--clr-accent);
+  color: var(--clr-dark);
+}
+@media screen and (min-width: 700px) {
+  #add-character-form select {
+    width: auto;
+  }
+}
+@media screen and (min-width: 890px) {
+  #add-character-form select {
+    width: 40%;
+  }
+}
+#add-character-form textarea {
+  width: 100%;
+  resize: none;
+  border-radius: var(--border-radius);
+  border: solid 2px var(--clr-primary);
+  padding: 0.5rem 1.5rem;
+  background-color: #f0f5e1;
+  min-height: 6rem;
+}
+#add-character-form textarea:hover {
+  background-color: var(--clr-accent);
+  color: var(--clr-dark);
+}
+#add-character-form textarea:active {
+  background-color: var(--clr-accent);
+}
+#add-character-form div {
+  display: grid;
+  gap: 0.2rem;
+}
+@media screen and (min-width: 890px) {
+  #add-character-form div:nth-child(2), #add-character-form div:nth-child(3) {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    gap: 1rem;
+  }
+}
+#add-character-form div:nth-child(7) {
+  display: flex;
+  padding-top: 1rem;
+  justify-content: center;
+  gap: 1rem;
+}
+
 nav {
   height: auto;
   display: flex;
@@ -506,7 +609,7 @@ nav h3 {
   font-family: "Explora";
   font-size: 1.5rem;
 }
-@media screen and (min-width: 1400px) {
+@media screen and (min-width: 1250px) {
   nav h3 {
     display: flex;
     justify-content: center;
@@ -552,6 +655,11 @@ nav .nav-items {
     background-color: transparent;
     gap: 1rem;
     width: auto;
+  }
+}
+@media screen and (min-width: 1000px) {
+  nav .nav-items {
+    gap: 2rem;
   }
 }
 nav .open {
@@ -668,7 +776,6 @@ nav h1:hover svg path {
   border: solid 2px var(--clr-primary);
   border-radius: var(--border-radius);
   padding: 0.5rem 1.5rem;
-  font-family: "Cinzel";
   cursor: pointer;
 }
 #search-form select:hover {
@@ -684,15 +791,15 @@ nav h1:hover svg path {
 .content {
   display: flex;
   flex-flow: column wrap;
-  flex-basis: 1;
   columns: 3;
   justify-content: center;
   align-items: center;
   gap: 1rem;
 }
-@media screen and (min-width: 890px) {
+@media screen and (min-width: 850px) {
   .content {
     flex-flow: row wrap;
+    padding: 1rem;
   }
 }
 

@@ -24,7 +24,7 @@ nav {
     font-family: 'Explora';
     font-size: 1.5rem;
 
-    @media screen and (min-width:1400px) {
+    @media screen and (min-width:1250px) {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -57,7 +57,12 @@ nav {
         background-color: transparent;
         gap: 1rem;
         width: auto;
-    }
+        }
+
+    @media screen and (min-width:1000px) {
+        gap: 2rem;
+        }
+
     }
 
     .open {
