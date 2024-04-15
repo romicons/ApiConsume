@@ -21,3 +21,31 @@
 @mixin card-hover ($size) {
     transform: scale($size);
 }
+
+@mixin img-frame {
+    border: 0.5em double #757575;
+}
+
+@mixin title-text-shadow {
+    text-shadow: var(--clr-accent) 1px 1px;
+}
+
+@mixin span-animation-style {
+    position: relative;
+
+    &::before {
+        transition: width 0.4s ease-out, left 0.4s ease-out; 
+        height: 2px;
+        content: '';
+        position: absolute;
+        background-color: currentColor;
+        width: 100%;
+        bottom: -10px;
+        left: 0;
+    }
+}
+
+@mixin span-animation {
+    width: 0; 
+    left: 50%;
+}

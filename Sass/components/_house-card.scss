@@ -38,22 +38,10 @@
     }
 
     button span {
-        position: relative;
-        
-        &::before {
-            transition: width 0.4s ease-out, left 0.4s ease-out; 
-            height: 2px;
-            content: '';
-            position: absolute;
-            background-color: currentColor;
-            width: 100%;
-            bottom: -10px;
-            left: 0;
-        }
+        @include span-animation-style;
     }
 
     button:hover span::before {
-            width: 0; 
-            left: 50%;
-        }
+        @include span-animation-style;
+    }
 }

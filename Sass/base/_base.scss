@@ -1,4 +1,19 @@
 :root {
+    --clr-light: #123142;
+    --clr-dark: #20130a;
+    --clr-primary: #142026;
+    --clr-secondary: #e9f0c9;
+    --clr-accent: #3b657a;
+    --bgc-body: linear-gradient(to bottom right, #142026, #20130a);
+    --bgc-nav: #f0f5e1;
+    --clr-hover-btn: #3b657a;
+    --clr-edit-btn: #20130a;
+    --clr-hover-edit-btn: #20130a;
+    --box-shadow: var(--clr-accent) 0px 1px 4px;
+    --border-radius: 5px;
+}
+
+.darkmode {
     --clr-light: #20130a;
     --clr-dark: #e9f0c9;
     --clr-primary: #123142;
@@ -7,18 +22,8 @@
     --bgc-body: linear-gradient(to bottom right, #f0f5e1, #e9f0c9);
     --bgc-nav: #123142;
     --clr-hover-btn: #f0f5e1;
-    --box-shadow: var(--clr-accent) 0px 1px 4px;
-    --border-radius: 5px;
-}
-
-.darkmode {
-    --clr-light: #123142;
-    --clr-dark: #20130a;
-    --clr-primary: #142026;
-    --clr-secondary: #e9f0c9;
-    --bgc-body: linear-gradient(to bottom right, #142026, #20130a);
-    --bgc-nav: #f0f5e1;
-    --clr-hover-btn: #3b657a;
+    --clr-edit-btn: #e9f0c9;
+    --clr-hover-edit-btn: #123142;
 }
 
 * {

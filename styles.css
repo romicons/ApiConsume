@@ -1,6 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Explora&display=swap");
 :root {
+  --clr-light: #123142;
+  --clr-dark: #20130a;
+  --clr-primary: #142026;
+  --clr-secondary: #e9f0c9;
+  --clr-accent: #3b657a;
+  --bgc-body: linear-gradient(to bottom right, #142026, #20130a);
+  --bgc-nav: #f0f5e1;
+  --clr-hover-btn: #3b657a;
+  --clr-edit-btn: #20130a;
+  --clr-hover-edit-btn: #20130a;
+  --box-shadow: var(--clr-accent) 0px 1px 4px;
+  --border-radius: 5px;
+}
+
+.darkmode {
   --clr-light: #20130a;
   --clr-dark: #e9f0c9;
   --clr-primary: #123142;
@@ -9,18 +24,8 @@
   --bgc-body: linear-gradient(to bottom right, #f0f5e1, #e9f0c9);
   --bgc-nav: #123142;
   --clr-hover-btn: #f0f5e1;
-  --box-shadow: var(--clr-accent) 0px 1px 4px;
-  --border-radius: 5px;
-}
-
-.darkmode {
-  --clr-light: #123142;
-  --clr-dark: #20130a;
-  --clr-primary: #142026;
-  --clr-secondary: #e9f0c9;
-  --bgc-body: linear-gradient(to bottom right, #142026, #20130a);
-  --bgc-nav: #f0f5e1;
-  --clr-hover-btn: #3b657a;
+  --clr-edit-btn: #e9f0c9;
+  --clr-hover-edit-btn: #123142;
 }
 
 * {
@@ -68,6 +73,9 @@ main {
 .button:hover {
   background: rgba(100, 0, 0, 0.03);
   cursor: pointer;
+}
+.button:active {
+  background-color: var(--clr-light);
 }
 .button-horizontal, .button-vertical {
   position: absolute;
@@ -160,6 +168,30 @@ main {
   border: 2px solid var(--clr-accent);
 }
 
+.edit-btn {
+  border-radius: var(--border-radius);
+  appearance: none;
+  letter-spacing: 0.25em;
+  background-color: transparent;
+  color: var(--clr-edit-btn);
+  font-weight: bold;
+  border: none;
+  border: 2px solid var(--clr-edit-btn);
+  padding: 0.5rem 1.5rem;
+  background-color: var(--clr-accent);
+}
+.edit-btn:hover {
+  cursor: pointer;
+  color: var(--bgc-nav);
+}
+.edit-btn:active {
+  background-color: var(--clr-dark);
+  color: var(--bgc-nav);
+}
+.edit-btn:hover {
+  border: 2px solid var(--bgc-nav);
+}
+
 .loading-container {
   display: flex;
   justify-content: center;
@@ -232,8 +264,220 @@ main {
   left: 0;
 }
 .house-card button:hover span::before {
+  position: relative;
+}
+.house-card button:hover span::before::before {
+  transition: width 0.4s ease-out, left 0.4s ease-out;
+  height: 2px;
+  content: "";
+  position: absolute;
+  background-color: currentColor;
+  width: 100%;
+  bottom: -10px;
+  left: 0;
+}
+
+.reduced-character-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-flow: column wrap;
+  gap: 1rem;
+  padding: 1rem;
+  min-height: 36rem;
+  max-height: 45rem;
+  min-width: 18rem;
+  max-width: 30rem;
+  border: none;
+  background-color: var(--clr-secondary);
+  color: var(--clr-dark);
+  box-shadow: var(--box-shadow);
+  border-radius: var(--border-radius);
+}
+.reduced-character-card h2 {
+  text-shadow: var(--clr-accent) 1px 1px;
+}
+.reduced-character-card img {
+  max-width: 10rem;
+  max-height: 10rem;
+  border-radius: 50%;
+  object-fit: contain;
+  border: 0.5em double #757575;
+}
+.reduced-character-card p {
+  font-family: "Explora", sans-serif;
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-align: center;
+}
+.reduced-character-card button {
+  border-radius: var(--border-radius);
+  appearance: none;
+  letter-spacing: 0.25em;
+  background-color: transparent;
+  color: var(--clr-dark);
+  font-weight: bold;
+  border: none;
+  padding: 0.5rem;
+}
+.reduced-character-card button:hover {
+  cursor: pointer;
+  color: var(--clr-hover-btn);
+}
+.reduced-character-card button:active {
+  background-color: var(--clr-primary);
+  color: var(--clr-hover-btn);
+}
+.reduced-character-card button span {
+  position: relative;
+}
+.reduced-character-card button span::before {
+  transition: width 0.4s ease-out, left 0.4s ease-out;
+  height: 2px;
+  content: "";
+  position: absolute;
+  background-color: currentColor;
+  width: 100%;
+  bottom: -10px;
+  left: 0;
+}
+.reduced-character-card button:hover span::before {
   width: 0;
   left: 50%;
+}
+
+.header-card {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  gap: 1rem;
+  align-items: center;
+  max-height: 16rem;
+  padding-bottom: 1rem;
+}
+
+.extended-character-card {
+  display: flex;
+  justify-content: space-between;
+  flex-flow: column wrap;
+  gap: 1rem;
+  padding: 1rem;
+  width: 90%;
+  border: none;
+  background-color: var(--clr-secondary);
+  color: var(--clr-dark);
+  box-shadow: var(--box-shadow);
+  border-radius: var(--border-radius);
+}
+@media screen and (min-width: 700px) {
+  .extended-character-card {
+    min-height: 50%;
+    padding-inline: 2rem;
+  }
+}
+@media screen and (min-width: 1100px) {
+  .extended-character-card {
+    width: 70%;
+  }
+}
+.extended-character-card div:nth-child(3) {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+.extended-character-card p {
+  font-family: "Explora", sans-serif;
+  font-size: 1.5rem;
+  text-align: justify;
+  font-weight: bold;
+}
+
+.character-info-card {
+  display: flex;
+  flex-flow: column wrap;
+  gap: 1rem;
+}
+@media screen and (min-width: 700px) {
+  .character-info-card {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+.character-info-card div:nth-child(1) {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+@media screen and (min-width: 700px) {
+  .character-info-card div:nth-child(1) {
+    width: 100%;
+  }
+}
+.character-info-card div:nth-child(2) {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+}
+.character-info-card div:nth-child(2) h2 {
+  text-shadow: var(--clr-accent) 1px 1px;
+}
+.character-info-card div:nth-child(3) {
+  flex-direction: column;
+}
+.character-info-card div:nth-child(4) {
+  display: flex;
+  justify-content: center;
+}
+.character-info-card button {
+  border-radius: var(--border-radius);
+  appearance: none;
+  letter-spacing: 0.25em;
+  background-color: transparent;
+  color: var(--clr-dark);
+  font-weight: bold;
+  border: none;
+  padding: 0.5rem;
+}
+.character-info-card button:hover {
+  cursor: pointer;
+  color: var(--clr-hover-btn);
+}
+.character-info-card button:active {
+  background-color: var(--clr-primary);
+  color: var(--clr-hover-btn);
+}
+.character-info-card button span {
+  position: relative;
+}
+.character-info-card button span::before {
+  transition: width 0.4s ease-out, left 0.4s ease-out;
+  height: 2px;
+  content: "";
+  position: absolute;
+  background-color: currentColor;
+  width: 100%;
+  bottom: -10px;
+  left: 0;
+}
+.character-info-card button:hover span::before {
+  width: 0;
+  left: 50%;
+}
+
+.house-emblem {
+  width: 2rem;
+}
+@media screen and (min-width: 700px) {
+  .house-emblem {
+    width: 3rem;
+  }
+}
+
+.character-portrait {
+  width: 10rem;
+  border-radius: var(--border-radius);
+  border: 0.5em double #757575;
 }
 
 nav {
@@ -381,6 +625,7 @@ nav h1:hover svg path {
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
+  align-items: center;
   gap: 1rem;
 }
 @media screen and (min-width: 1000px) {
@@ -394,10 +639,14 @@ nav h1:hover svg path {
   color: var(--bgc-nav);
   text-shadow: var(--clr-accent) 1px 1px;
 }
+@media screen and (min-width: 1120px) {
+  #search-form h2 {
+    width: auto;
+  }
+}
 #search-form div {
   display: flex;
   justify-content: center;
-  align-content: center;
   gap: 1rem;
 }
 #search-form div:nth-child(1) {
@@ -420,7 +669,6 @@ nav h1:hover svg path {
   border-radius: var(--border-radius);
   padding: 0.5rem 1.5rem;
   font-family: "Cinzel";
-  font-size: 1.2rem;
   cursor: pointer;
 }
 #search-form select:hover {
@@ -440,7 +688,7 @@ nav h1:hover svg path {
   columns: 3;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
+  gap: 1rem;
 }
 @media screen and (min-width: 890px) {
   .content {

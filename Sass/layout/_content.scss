@@ -5,7 +5,7 @@
     columns: 3;
     justify-content: center;
     align-items: center;
-    gap: 2rem;
+    gap: 1rem;
 
     @media screen and (min-width:890px) {
         flex-flow: row wrap;

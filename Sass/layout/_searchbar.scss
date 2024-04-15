@@ -2,6 +2,7 @@
     display: flex;
     flex-flow: column wrap;
     justify-content: center;
+    align-items: center;
     gap: 1rem;
 
     @media screen and (min-width:1000px) {
@@ -12,12 +13,15 @@
         width: 100%;
         text-align: center;
         color: var(--bgc-nav);
-        text-shadow: var(--clr-accent) 1px 1px;
+        
+        @include title-text-shadow;
+        @media screen and (min-width: 1120px) {
+            width: auto;
+        }
     }
     div {
         display: flex;
         justify-content: center;
-        align-content: center;
         gap: 1rem;
     }
 
@@ -42,7 +46,6 @@
         border-radius: var(--border-radius);
         padding: 0.5rem 1.5rem;
         font-family: 'Cinzel';
-        font-size: 1.2rem;
         cursor: pointer;
 
         &:hover {
