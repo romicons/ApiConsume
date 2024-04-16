@@ -51,6 +51,10 @@ main {
   padding-block: 1rem;
 }
 
+section {
+  margin: 0 auto;
+}
+
 .button {
   --offset: 5px;
   --border-size: 2px;
@@ -201,6 +205,7 @@ main {
 #render-spinner {
   width: 10rem;
   display: none;
+  filter: invert(1);
 }
 
 .house-card {
@@ -878,13 +883,83 @@ nav h1:hover svg path {
   }
 }
 
+#warning-container {
+  display: none;
+  flex-flow: column wrap;
+  padding-block: 1rem;
+  padding-inline: 2rem;
+  border: none;
+  gap: 1rem;
+  background-color: var(--clr-secondary);
+  color: var(--clr-dark);
+  box-shadow: var(--box-shadow);
+  border-radius: var(--border-radius);
+}
+#warning-container div:nth-child(1) {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+  font-size: 1.5rem;
+  color: #990000;
+}
+#warning-container div:nth-child(2) {
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.3em;
+}
+#warning-container div:nth-child(3), #warning-container div:nth-child(4) {
+  text-align: center;
+}
+#warning-container div:nth-child(5) {
+  display: flex;
+  justify-content: center;
+}
+#warning-container button {
+  border-radius: var(--border-radius);
+  appearance: none;
+  letter-spacing: 0.25em;
+  background-color: transparent;
+  color: var(--clr-dark);
+  font-weight: bold;
+  border: none;
+  letter-spacing: 0.1em;
+  padding: 0.5rem;
+}
+#warning-container button:hover {
+  cursor: pointer;
+  color: var(--clr-hover-btn);
+}
+#warning-container button:active {
+  background-color: var(--clr-primary);
+  color: var(--clr-hover-btn);
+}
+#warning-container button span {
+  position: relative;
+}
+#warning-container button span::before {
+  transition: width 0.4s ease-out, left 0.4s ease-out;
+  height: 2px;
+  content: "";
+  position: absolute;
+  background-color: currentColor;
+  width: 100%;
+  bottom: -10px;
+  left: 0;
+}
+#warning-container button:hover span::before {
+  width: 0;
+  left: 50%;
+}
+
 .content {
   display: flex;
   flex-flow: column wrap;
   columns: 3;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
+  gap: 2rem;
 }
 @media screen and (min-width: 850px) {
   .content {
