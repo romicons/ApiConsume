@@ -31,11 +31,11 @@ const toggleDarkMode = () => {
     if (darkMode) {
         document.body.classList.add('darkmode');
         document.getElementById('darkmode-btn-description').innerHTML = `Light Mode`
-        document.getElementById('render-spinner').style.filter = 'invert(1)';
+        document.getElementById('render-spinner').style.filter = 'none';
     } else {
         document.body.classList.remove('darkmode');
         document.getElementById('darkmode-btn-description').innerHTML = `Dark Mode`
-        document.getElementById('render-spinner').style.filter = 'none';
+        document.getElementById('render-spinner').style.filter = 'invert(1)';
     }
     localStorage.setItem('darkMode', darkMode);
 }
@@ -44,4 +44,45 @@ const toggleDarkMode = () => {
 
 const setInnerShadowColor = (element, color) => {
     element.style.boxShadow = `inset 0 0 5px 4px ${color}`;
+}
+
+//      RENDER ERROR
+
+const renderError = (errorDetail) => {
+    const errorContainer = document.getElementById('warning-container');
+    setStyleFlex(errorContainer);
+
+    errorContainer.innerHTML += `
+        <div> 
+            <i class="fa-solid fa-circle-exclamation"></i>
+            <h3>Error</h3>
+        </div>
+        <div>
+            <p>Ups! Something went wrong.</p>
+        </div>
+        <div>
+            <p>Error details:</p>
+            <p>${errorDetail}</p>
+        </div>
+        <div>
+            <p>Please, try again later.</p>
+        </div>
+        <div>
+            <button class="negative-btn" id="close-error">
+                <i class="fa-solid fa-arrow-left"></i>
+                <span>Go back</span>
+            </button>
+        </div>
+    `
+
+    const closeError = document.getElementById('close-error')
+    closeError.addEventListener('click', () => {
+        setStyleNone(errorContainer);
+    }
+)};
+
+//          INITIALIZE APP 
+
+const initializeApp = () => {
+    getGreatHouses(baseData);
 }
