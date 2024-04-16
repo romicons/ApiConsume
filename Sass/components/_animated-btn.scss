@@ -23,6 +23,10 @@
 		cursor: pointer;
 	}
 
+	&:active {
+		background-color: var(--clr-light);
+	}
+
 &-horizontal,
 	&-vertical {
 		position: absolute;

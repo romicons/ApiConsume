@@ -1,0 +1,12 @@
+.edit-btn {
+    @include button-format(var(--clr-edit-btn), var(--bgc-nav), var(--clr-dark));
+    
+    border: 2px solid var(--clr-edit-btn);
+    padding: 0.5rem 1.5rem;
+    background-color: var(--clr-accent);
+    
+    &:hover {
+        border: 2px solid var(--bgc-nav);
+    }
+
+}

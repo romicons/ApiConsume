@@ -1,0 +1,104 @@
+.extended-character-card {
+    display: flex;
+    justify-content: space-between;
+    flex-flow: column wrap;
+    gap: 1rem;
+    padding: 1rem;
+    width: 90%;
+    border: none;
+    background-color: var(--clr-secondary);
+    color: var(--clr-dark);
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius);
+
+    @media screen and (min-width:700px) {
+        min-height: 50%;
+        padding-inline: 2rem;
+    }
+
+    @media screen and (min-width:1100px) {
+        width: 70%;
+    }
+
+    div:nth-child(3) {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    p {
+        font-family: 'Explora', sans-serif;
+        font-size: 1.5rem;
+        text-align: justify;
+        font-weight: bold;
+    }
+}
+
+.character-info-card {
+    display: flex;
+    flex-flow: column wrap;
+    gap: 1rem;
+
+    @media screen and (min-width:700px) {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    div:nth-child(1) {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+
+        @media screen and (min-width:700px) {
+            width: 100%;
+        }
+    }  
+    
+    div:nth-child(2) {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+
+        h2 {
+            @include title-text-shadow;
+        }
+    }
+
+    div:nth-child(3) {
+        flex-direction: column;
+    }
+
+    div:nth-child(4) {
+        display: flex;
+        justify-content: center;
+    }
+
+    button {
+        @include button-format(var(--clr-dark), var(--clr-hover-btn), var(--clr-primary));
+        padding: 0.5rem;
+    }
+
+    button span {
+        @include span-animation-style;
+    }
+
+    button:hover span::before {
+        @include span-animation;
+    }
+}
+
+.house-emblem {
+    width: 2rem;
+
+    @media screen and (min-width:700px) {
+        width: 3rem;
+    }
+}
+
+.character-portrait {
+    width: 10rem;
+    border-radius: var(--border-radius);
+
+    @include img-frame;
+}

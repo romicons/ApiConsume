@@ -28,7 +28,7 @@
                 </h3>
             </div>
             <div>
-                <button id="hamb-menu">
+                <button id="hamb-menu" aria-label="Open Navbar">
                     <i class="fa-solid fa-bars"></i>
                 </button>
             </div>
@@ -38,9 +38,16 @@
                         <svg height="35" viewBox="0 0 20 20" width="35" xmlns="http://www.w3.org/2000/svg" aria-label="The Seven Pointed Star"><path d="m55 7489c0 .552-.448 1-1 1s-1-.448-1-1 .448-1 1-1 1 .448 1 1zm3.5-.585 2.155-3.846c.848 1.269 1.345 2.793 1.345 4.431 0 .597-.071 1.177-.195 1.736zm-.637 7.586-.254-3.58 3.87-.607c-.674 1.786-1.963 3.271-3.616 4.187zm-2.38-5.272c.054.758.107 1.504.162 2.278-.623-.591-1.037-.983-1.645-1.559-.611.578-1.022.968-1.645 1.559.055-.774.108-1.52.162-2.278-1.448-.226-1.349-.211-2.315-.362.734-.517 1.182-.831 1.926-1.353-.906-1.617-.765-1.365-1.138-2.031.636.2.263.083 2.199.691.178-.46.626-1.626.811-2.106.185.48.633 1.646.811 2.106 1.936-.608 1.563-.491 2.199-.691-.373.666-.103.183-1.138 2.031.744.522 1.192.836 1.926 1.353-.768.12-.38.059-2.315.362zm-1.483 6.271c-.88 0-1.724-.148-2.516-.412l2.516-2.385 2.516 2.385c-.792.264-1.636.412-2.516.412zm-3.863-.999c-1.653-.916-2.942-2.401-3.616-4.187l3.87.607zm-4.137-7.001c0-1.638.497-3.162 1.345-4.431l2.155 3.846-3.305 2.321c-.124-.559-.195-1.139-.195-1.736zm7.607-7.98-1.61 4.183-4.154-1.305c1.39-1.674 3.451-2.765 5.764-2.878zm6.55 2.878-4.154 1.305-1.61-4.183c2.313.113 4.374 1.204 5.764 2.878zm-6.157-4.898c-5.523 0-10 4.477-10 10s4.477 10 10 10 10-4.477 10-10-4.477-10-10-10z" fill-rule="evenodd" transform="translate(-44 -7479)"/></svg>
                         <span id="darkmode-btn-description">Dark Mode</span>
                     </button>
-                </div>            
+                </div>
                 <div>
-                    <button id="add-character" class="button">
+                    <button id="add-house" class="button" aria-label="Add House">
+                        Add House
+                        <div class="button-horizontal"></div>
+                        <div class="button-vertical"></div>
+                    </button>
+                </div>          
+                <div>
+                    <button id="add-character" class="button" aria-label="Add Character">
                         Add Character
                         <div class="button-horizontal"></div>
                         <div class="button-vertical"></div>
@@ -103,23 +110,193 @@
                 <div id="warning-container">
         
                 </div>
-                <div class="card-container">
+                <div class="content">
+                    
+                    <div class="house-card">
+                        <h2>House Baratheon</h2>
+                        <img src="assets/Baratheon-Emblem.webp" alt="House Emblem">
+                        <h3>Hear me Roar!</h3>
+                        <button>
+                            <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                            <span>View characters</span>
+                        </button>
+                    </div>
+                    
+                    <div class="reduced-character-card">
+                        <div>
+                            <div class="header-card">
+                                <h2>Robert I Baratheon</h2>
+                                <img src="https://awoiaf.westeros.org/images/thumb/b/bd/RobertBKingMagali_Villeneuve.jpg/771px-RobertBKingMagali_Villeneuve.jpg" alt="Character avatar">
+                            </div>
+                            <div>
+                                <p>King of the Andals, the Rhoynar, and the First Men, Lord of the Seven Kingdoms, and Protector of the Realm of Westeros during 283–298 AC, and wielded immense power and authority. Known for his strength in battle and larger-than-life personality, Robert was a formidable warrior who led the rebellion against the Targaryen dynasty.</p>
+                            </div>
+                        </div>
+                        <div>
+                            <button>
+                                <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                <span>View more details</span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="extended-character-card">
+                            <div class="character-info-card">
+                                <div>
+                                    <button>
+                                        <i class="fa-solid fa-arrow-left"></i>
+                                        <span>Go back</span>
+                                    </button>
+                                    <img src="assets/Baratheon-Emblem.webp" class="house-emblem" alt="House Emblem">
+                                </div>
+                                <div>
+                                    <h2>Robert I Baratheon</h2>
+                                </div>
+                                <div>
+                                    <h3>Gender: Male</h3>
+                                    <h3>State: Dead</h3>
+                                </div>
+                                <div>
+                                    <img src="https://awoiaf.westeros.org/images/thumb/b/bd/RobertBKingMagali_Villeneuve.jpg/771px-RobertBKingMagali_Villeneuve.jpg" class="character-portrait" alt="character-avatar">
+                                </div>
+                            </div>
+                            <div>
+                                <h2>Biography</h2>
+                                <p>
+                                    Robert I Baratheon, known as King Robert, was the King of the Andals, the Rhoynar, and the First Men, Lord of the Seven Kingdoms, and Protector of the Realm of Westeros, as well as the head of House Baratheon. He initiated the rebellion against Aerys Targaryen II with the aim of recovering Lyanna Stark, sister of his friend Eddard Stark, whom he was engaged to and deeply in love with. The alleged kidnapping of Lyanna by Rhaegar Targaryen triggered Robert's anger and was one of the main causes of the war. The search for Lyanna and the desire for revenge were powerful motivators that drove Robert and his allies to rebel against the Targaryen government and fight for the Iron Throne. After winning the war and with Lyanna having died during the conflict, Robert ended up marrying Cersei Lannister to ensure political stability. With her, he had three children: Joffrey, Myrcella, and Tommen. However, his relationship with Cersei was tense and marked by infidelity and lack of love, which contributed to tensions at court and instability in the Seven Kingdoms. Robert's life came to an end in a tragic accident during a tournament, where he was mortally wounded by a boar. Although officially recorded as a hunting accident, it was actually orchestrated by his political enemies, including his wife Cersei Lannister, who conspired to remove him from the throne and place her own son in his place.
+                                </p>
+                            </div>
+                            <div>
+                                <button class="negative-btn">
+                                    <i class="fa-solid fa-trash"></i>
+                                    <span>Delete</span>
+                                </button>
+                                <button class="edit-btn">
+                                    <i class="fa-solid fa-pen"></i>
+                                    <span>Edit</span>
+                                </button>
+                            </div>
+                    </div>
+                
+                    <form class="character-form">
+                        <h2>Add Character</h2>
+                        <div>
+                            <label for="new-character-name">
+                                Name
+                            </label>
+                            <input type="text" id="new-character-name" required>
+                            <label for="new-character-house">
+                                House
+                            </label>
+                            <select id="new-character-house" required>
+                                <option>Choose...</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="new-character-gender">
+                                Gender
+                            </label>
+                            <select id="new-character-gender" required>
+                                <option>Choose...</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Other/Unknown">Other/Unknown</option>
+                            </select>
+                            <label for="new-character-state">
+                                State
+                            </label>
+                            <select id="new-character-state" required>
+                                <option>Choose...</option>
+                                <option value="Alive">Alive</option>
+                                <option value="Dead">Dead</option>
+                                <option value="Unknown">Unknown</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="new-character-avatar">
+                                Portrait
+                            </label>
+                            <input type="url" id="new-character-avatar" required>
+                        </div>
+                        <div>
+                            <label for="new-character-description">
+                                Description
+                            </label>
+                            <textarea id="new-character-description" required></textarea>
+                        </div>
+                        <div>
+                            <label for="new-character-biography">
+                                Biography
+                            </label>
+                            <textarea id="new-character-biography" required></textarea>
+                        </div>
+                        <div>
+                            <button class="negative-btn">
+                                <i class="fa-solid fa-xmark"></i>
+                                <span>Cancel</span>
+                            </button>
+                            <button class="edit-btn">
+                                <i class="fa-solid fa-check"></i>
+                                <span>Save</span>
+                            </button>
+                        </div>
+                    </form>
+
+                    <form class="house-form">
+                        <h2>Add House</h2>
+                        <div>
+                            <label for="new-house-name">
+                                Name
+                            </label>
+                            <input type="text" id="new-house-name" required>
+                            <label for="new-house-motto">
+                                Motto
+                            </label>
+                            <input type="text" id="new-house-motto" required>
+                        </div>
+                        <div>
+                            <div>
+                                <label for="new-house-sigil">
+                                    Emblem
+                                </label>
+                                <input type="url" id="new-house-sigil" required>
+                            </div>
+                            <div>
+                                <label for="new-house-color">
+                                    Signature color
+                                </label>
+                                <input type="color" id="new-house-color" value="#FFFFFF" aria-label="House color signature">
+                            </div>
+                        </div>
+                        <div>
+                            <button class="negative-btn">
+                                <i class="fa-solid fa-xmark"></i>
+                                <span>Cancel</span>
+                            </button>
+                            <button class="edit-btn">
+                                <i class="fa-solid fa-check"></i>
+                                <span>Save</span>
+                            </button>
+                        </div>
+                    </form>
+
+                   
                 </div>
             </section>
         </main>
         <footer>
                 <ul class="social-networks">
                     <li>
-                        <a href="https://github.com/romicons" target="_blank" aria-label="Link a Github" class="footer-icon"><i class="fab fa-github-alt"></i></a>
+                        <a href="https://github.com/romicons" target="_blank" aria-label="Link to Github" class="footer-icon"><i class="fab fa-github-alt"></i></a>
                     </li>
                     <li>
-                        <a href="https://www.linkedin.com/in/romina-evelin-constantinoff/" class="footer-icon" target="_blank" aria-label="Link a LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.linkedin.com/in/romina-evelin-constantinoff/" class="footer-icon" target="_blank" aria-label="Link to LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                     </li>
                     <li>
-                        <a href="mailto:romina.constantinoff@gmail.com" aria-label="Link a Email" target="_blank" class="footer-icon"><i class="fas fa-envelope"></i></a>
+                        <a href="mailto:romina.constantinoff@gmail.com" aria-label="Link to Email" target="_blank" class="footer-icon"><i class="fas fa-envelope"></i></a>
                     </li>
                 </ul>
-                <p>© 2024 Romina Constantinoff. Todos los derechos reservados.</p>
+                <p>© 2024 Romina Constantinoff. All rights reserved.</p>
         </footer>
     <script src="functions.js"></script>
     <script src="main.js"></script>
