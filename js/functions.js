@@ -40,7 +40,7 @@ const toggleDarkMode = () => {
     localStorage.setItem('darkMode', darkMode);
 }
 
-//      CHANGE CARD BORDER 
+//      CHANGE CARD SHADOW 
 
 const setInnerShadowColor = (element, color) => {
     element.style.boxShadow = `inset 0 0 5px 4px ${color}`;
@@ -48,7 +48,7 @@ const setInnerShadowColor = (element, color) => {
 
 //      RENDER ERROR
 
-const renderError = (errorDetail) => {
+const renderError = (errorDetail, callFunction) => {
     const errorContainer = document.getElementById('warning-container');
     setStyleFlex(errorContainer);
 
@@ -78,6 +78,7 @@ const renderError = (errorDetail) => {
     const closeError = document.getElementById('close-error')
     closeError.addEventListener('click', () => {
         setStyleNone(errorContainer);
+        callFunction;
     }
 )};
 
