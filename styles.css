@@ -215,6 +215,7 @@ section {
   flex-flow: column wrap;
   gap: 1rem;
   padding: 1rem;
+  min-height: 22rem;
   max-height: 25rem;
   min-width: 18rem;
   border: none;
@@ -370,7 +371,7 @@ section {
   flex-flow: column wrap;
   gap: 1rem;
   padding: 1rem;
-  min-height: 36rem;
+  min-height: 40rem;
   max-height: 45rem;
   width: 90%;
   border: none;
@@ -392,17 +393,17 @@ section {
   text-shadow: var(--clr-accent) 1px 1px;
 }
 .reduced-character-card img {
-  max-width: 10rem;
-  max-height: 10rem;
+  max-height: 8rem;
   border-radius: 50%;
-  object-fit: contain;
+  object-fit: cover;
   border: 0.5em double #757575;
 }
 .reduced-character-card p {
   font-family: "Explora", sans-serif;
   font-weight: bold;
   font-size: 1.5rem;
-  text-align: center;
+  text-align: justify;
+  padding-inline: 1rem;
 }
 .reduced-character-card button {
   border-radius: var(--border-radius);
@@ -826,6 +827,7 @@ nav h1:hover svg path {
 
 #search-form {
   display: flex;
+  padding-top: 0.5rem;
   flex-flow: column wrap;
   justify-content: center;
   align-items: center;
