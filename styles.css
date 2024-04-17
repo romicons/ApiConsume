@@ -364,6 +364,76 @@ section {
   gap: 1rem;
 }
 
+.house-information-section {
+  display: flex;
+  width: 90%;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  color: var(--clr-secondary);
+  padding-inline: 1rem;
+  gap: 1.5rem;
+}
+.house-information-section h2 {
+  text-shadow: var(--clr-accent) 1px 1px;
+  font-size: 2.2rem;
+  text-align: center;
+}
+.house-information-section img {
+  width: 4rem;
+}
+.house-information-section p {
+  font-family: "Explora", sans-serif;
+  font-size: 2rem;
+  text-align: justify;
+  font-weight: bold;
+}
+.house-information-section div:nth-child(1) {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.house-information-section div:nth-child(1) button {
+  border-radius: var(--border-radius);
+  appearance: none;
+  letter-spacing: 0.25em;
+  background-color: transparent;
+  color: var(--clr-secondary);
+  font-weight: bold;
+  border: none;
+  padding: 0.5rem;
+}
+.house-information-section div:nth-child(1) button:hover {
+  cursor: pointer;
+  color: var(--clr-accent);
+}
+.house-information-section div:nth-child(1) button:active {
+  background-color: var(--clr-primary);
+  color: var(--clr-accent);
+}
+.house-information-section div:nth-child(1) button span {
+  position: relative;
+}
+.house-information-section div:nth-child(1) button span::before {
+  transition: width 0.4s ease-out, left 0.4s ease-out;
+  height: 2px;
+  content: "";
+  position: absolute;
+  background-color: currentColor;
+  width: 100%;
+  bottom: -10px;
+  left: 0;
+}
+.house-information-section div:nth-child(1) button:hover span::before {
+  width: 0;
+  left: 50%;
+}
+.house-information-section div:nth-child(4) {
+  display: flex;
+  gap: 2rem;
+}
+
 .reduced-character-card {
   display: flex;
   align-items: center;

@@ -56,13 +56,39 @@ const getHouseCharacters = (idHouse) => {
 };
 
 const createHouseCharacters = (houseData, houseCharacters) => {
-    const signatureColor = houseData.SignatureColor;
-    const houseId = houseData.id;
+    const {Sigil, SignatureColor, HouseName, Story, id:idHouse } = houseData;
 
     cardsContainer.innerHTML = '';
     setStyleFlex(document.getElementById('render-spinner'));
     setTimeout (() => {
         setStyleNone(document.getElementById('render-spinner'));
+        cardsContainer.innerHTML += `
+        <div class="house-information-section">
+            <div>
+                <button class="back_to_great_houses">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    <span>Go back</span>
+                </button>
+                <img src="${Sigil}" class="house-emblem" alt="${HouseName} Emblem">
+            </div>
+            <h2>${HouseName}</h2>
+            <div>
+                <p>
+                    ${Story}
+                </p>
+            </div>
+            <div>
+                <button class="negative-btn delete_house_btn" data-cardId="${idHouse}">
+                    <i class="fa-solid fa-trash"></i>
+                    <span>Delete House</span>
+                </button>
+                <button class="positive-btn edit_house_btn" data-cardId="${idHouse}">
+                    <i class="fa-solid fa-pen"></i>
+                    <span>Edit House</span>
+                </button>
+            </div>
+        </div>
+        `
         houseCharacters.forEach(character => {
             const { id, Name, Avatar, Description } = character;
             cardsContainer.innerHTML += `
@@ -77,7 +103,7 @@ const createHouseCharacters = (houseData, houseCharacters) => {
                         </div>
                     </div>
                     <div>
-                        <button data-houseid="${houseId}" data-cardid="${id}" class="view_more_details_btn">
+                        <button data-houseid="${idHouse}" data-cardid="${id}" class="view_more_details_btn">
                             <i class="fa-solid fa-arrow-right-to-bracket"></i>
                             <span>View more details</span>
                         </button>
@@ -86,19 +112,21 @@ const createHouseCharacters = (houseData, houseCharacters) => {
             `;
         });
         const characterCards = document.querySelectorAll('.reduced-character-card');
-        characterCards.forEach(card => {setInnerShadowColor(card, signatureColor);});
+        characterCards.forEach(card => {setInnerShadowColor(card, SignatureColor);});
         viewCharacterDetails(document.querySelectorAll(".view_more_details_btn"));
+        document.querySelector('.back_to_great_houses').addEventListener('click', () => { getGreatHouses(baseData) });
     }, 2000)
 };
 
 const viewCharacterDetails = (btns) => {
     btns.forEach((btn) => {
-        const idHouse = btn.dataset.houseid;
+        const idHouse = btn.dataset.houseid; 
         const idCharacter = btn.dataset.cardid;
+        btn.dataset.houseid = idHouse;
         btn.addEventListener("click", () => {
             getCharacter(idHouse, idCharacter);
         });
-    });
+    })    
 };
 
 //      GET CHARACTER
@@ -121,13 +149,13 @@ const createCharacterExtendedCard = (character, house) => {
         setStyleNone(document.getElementById('render-spinner'));
 
         const { id, Name, Gender, Avatar, State, Biography } = character;
-        const { Sigil, SignatureColor } = house; 
+        const { Sigil, SignatureColor, id:idHouse } = house; 
 
         cardsContainer.innerHTML += `
             <div class="extended-character-card">
                 <div class="character-info-card">
                     <div>
-                        <button>
+                        <button class="back_to_house_characters">
                             <i class="fa-solid fa-arrow-left"></i>
                             <span>Go back</span>
                         </button>
@@ -138,7 +166,7 @@ const createCharacterExtendedCard = (character, house) => {
                     </div>
                     <div>
                         <h3>Gender: ${Gender}</h3>
-                        <h3>State: ${State}d</h3>
+                        <h3>State: ${State}</h3>
                     </div>
                     <div>
                         <img src="${Avatar}" class="character-portrait" alt="${Name} Portrait">
@@ -162,8 +190,9 @@ const createCharacterExtendedCard = (character, house) => {
                 </div>
             </div>
         `;
-        setInnerShadowColor(document.querySelector('.extended-character-card'), `${SignatureColor}`)
-        //editCharacter(document.querySelectorAll(".edit_character_btn"));
-        //deleteCharacter(document.querySelectorAll(".delete_character_btn"));
+        setInnerShadowColor(document.querySelector('.extended-character-card'), `${SignatureColor}`);
+        document.querySelector('.back_to_house_characters').addEventListener('click', () => { getHouseCharacters(idHouse)});
+        //editCharacter(document.querySelector(".edit_character_btn"));
+        //deleteCharacter(document.querySelector(".delete_character_btn"));
     }, 2000);
 };
