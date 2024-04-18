@@ -56,7 +56,7 @@ const getHouseCharacters = (idHouse) => {
 };
 
 const createHouseCharacters = (houseData, houseCharacters) => {
-    const {Sigil, SignatureColor, HouseName, Story, id:idHouse } = houseData;
+    const {Sigil, SignatureColor, HouseName, Story, id:idHouse, Members } = houseData;
 
     cardsContainer.innerHTML = '';
     setStyleFlex(document.getElementById('render-spinner'));
@@ -89,7 +89,21 @@ const createHouseCharacters = (houseData, houseCharacters) => {
             </div>
         </div>
         `
-        if (houseCharacters.lenght < 0) {
+        if (Members.length === 0) {
+            cardsContainer.innerHTML += `
+            <div class="no-content">
+                <div>
+                    <h3>
+                        <i class="fa-solid fa-circle-exclamation"></i>
+                        Ups!
+                    </h3>
+                </div>
+                <div>
+                    <p>Looks like this house doesn't have any characters yet. Please try to add some.</p>
+                </div>
+            </div>
+            `
+        } else {
             houseCharacters.forEach(character => {
                 const { id, Name, Avatar, Description } = character;
                 cardsContainer.innerHTML += `
@@ -114,23 +128,8 @@ const createHouseCharacters = (houseData, houseCharacters) => {
             });
             const characterCards = document.querySelectorAll('.reduced-character-card');
             characterCards.forEach(card => {setInnerShadowColor(card, SignatureColor);});
-            viewCharacterDetails(document.querySelectorAll(".view_more_details_btn"));
+            viewCharacterDetails(document.querySelectorAll(".view_more_details_btn"));}
             document.querySelector('.back_to_great_houses').addEventListener('click', () => { getGreatHouses(baseData) });
-        } else {
-            cardsContainer.innerHTML += `
-            <div class="no-content">
-                <div>
-                    <h3>
-                        <i class="fa-solid fa-circle-exclamation"></i>
-                        Ups!
-                    </h3>
-                </div>
-                <div>
-                    <p>Looks like this house doesn't have any characters yet. Please try to add some.</p>
-                </div>
-            </div>
-            `
-        }
     }, 2000)
 };
 

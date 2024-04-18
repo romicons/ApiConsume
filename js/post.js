@@ -57,13 +57,13 @@ const generateFormNewHouse = () => {
                         </label>
                         <input type="color" id="new-house-color" value="#FFFFFF" aria-label="House color signature" required>
                     </div>
-                    <div>
-                        <label for="new-house-story">
-                            Story
-                        </label>
-                        <textarea id="new-house-story" required></textarea>
-                    </div>
                 </div>
+                <div>
+                    <label for="new-house-story">
+                        Story
+                    </label>
+                    <textarea id="new-house-story" required></textarea>
+                </div>        
                 <div>
                     <button class="negative-btn abort_new_house">
                         <i class="fa-solid fa-xmark"></i>
