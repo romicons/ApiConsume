@@ -1,3 +1,6 @@
+//      START APP
+
+initializeApp();
 
 //      RESPONSIVE DESIGN
 
@@ -7,4 +10,7 @@ document.getElementById('hamb-menu').addEventListener('click', toggleMobileNav)
 
 document.getElementById('go-home-btn').addEventListener('click', () => {getGreatHouses(baseData)});
 
-initializeApp();
+document.getElementById('add-house').addEventListener('click', () => {
+    generateFormNewHouse()
+    toggleMobileNav()
+});

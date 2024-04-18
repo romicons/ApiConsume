@@ -89,32 +89,48 @@ const createHouseCharacters = (houseData, houseCharacters) => {
             </div>
         </div>
         `
-        houseCharacters.forEach(character => {
-            const { id, Name, Avatar, Description } = character;
-            cardsContainer.innerHTML += `
-                <div class="reduced-character-card">
-                    <div>
-                        <div class="header-card">
-                            <h2>${Name}</h2>
-                            <img src="${Avatar}" alt="${Name} portrait}">
+        if (houseCharacters.lenght < 0) {
+            houseCharacters.forEach(character => {
+                const { id, Name, Avatar, Description } = character;
+                cardsContainer.innerHTML += `
+                    <div class="reduced-character-card">
+                        <div>
+                            <div class="header-card">
+                                <h2>${Name}</h2>
+                                <img src="${Avatar}" alt="${Name} portrait}">
+                            </div>
+                            <div>
+                                <p>${Description}</p>
+                            </div>
                         </div>
                         <div>
-                            <p>${Description}</p>
+                            <button data-houseid="${idHouse}" data-cardid="${id}" class="view_more_details_btn">
+                                <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                <span>View more details</span>
+                            </button>
                         </div>
                     </div>
-                    <div>
-                        <button data-houseid="${idHouse}" data-cardid="${id}" class="view_more_details_btn">
-                            <i class="fa-solid fa-arrow-right-to-bracket"></i>
-                            <span>View more details</span>
-                        </button>
-                    </div>
+                `;
+            });
+            const characterCards = document.querySelectorAll('.reduced-character-card');
+            characterCards.forEach(card => {setInnerShadowColor(card, SignatureColor);});
+            viewCharacterDetails(document.querySelectorAll(".view_more_details_btn"));
+            document.querySelector('.back_to_great_houses').addEventListener('click', () => { getGreatHouses(baseData) });
+        } else {
+            cardsContainer.innerHTML += `
+            <div class="no-content">
+                <div>
+                    <h3>
+                        <i class="fa-solid fa-circle-exclamation"></i>
+                        Ups!
+                    </h3>
                 </div>
-            `;
-        });
-        const characterCards = document.querySelectorAll('.reduced-character-card');
-        characterCards.forEach(card => {setInnerShadowColor(card, SignatureColor);});
-        viewCharacterDetails(document.querySelectorAll(".view_more_details_btn"));
-        document.querySelector('.back_to_great_houses').addEventListener('click', () => { getGreatHouses(baseData) });
+                <div>
+                    <p>Looks like this house doesn't have any characters yet. Please try to add some.</p>
+                </div>
+            </div>
+            `
+        }
     }, 2000)
 };
 

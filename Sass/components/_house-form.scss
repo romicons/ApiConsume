@@ -29,6 +29,10 @@
         @include input-format;
     }
 
+    textarea {
+        @include textarea-format;
+    }
+
     #new-house-color {
         cursor: pointer;
         width: 2rem; 
