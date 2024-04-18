@@ -46,6 +46,18 @@ const setInnerShadowColor = (element, color) => {
     element.style.boxShadow = `inset 0 0 5px 4px ${color}`;
 }
 
+//      FORM ERROR
+
+const formError = (field, message) => {
+    let errorText = document.createElement('p');
+    errorText.style.color = '#990000';
+    errorText.innerHTML = `<i class="fa-solid fa-circle-xmark"></i> ${message}`;
+    let inputElement = document.getElementById(`${field.id}`);
+    inputElement.style.outline = '2px solid #990000';
+    inputElement.parentNode.insertBefore(errorText, inputElement.nextSibling);
+};
+
+
 //      RENDER ERROR
 
 const renderError = (errorDetail, callFunction) => {
@@ -81,6 +93,25 @@ const renderError = (errorDetail, callFunction) => {
         callFunction;
     }
 )};
+
+//      VALIDATE URL 
+
+const imgFromUrl = (url) => {
+    const validLinks = [
+      /^(https?:\/\/.*)(\.jpg|\.png)?$/i,
+      /^data:image\/png/i,
+      /^data:image\/jpeg/i,
+      /^data:image\/apng/i,
+      /^data:image\/ajpeg/i
+    ];
+
+    return validLinks.some(regex => regex.test(url));
+};
+
+
+const capitalizeFirstLetter = (string) => {
+    return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
+};
 
 //          INITIALIZE APP 
 
