@@ -11,6 +11,11 @@ document.getElementById('hamb-menu').addEventListener('click', toggleMobileNav)
 document.getElementById('go-home-btn').addEventListener('click', () => {getGreatHouses(baseData)});
 
 document.getElementById('add-house').addEventListener('click', () => {
-    generateFormNewHouse()
-    toggleMobileNav()
+    generateFormNewHouse();
+    toggleMobileNav();
 });
+
+document.getElementById('add-character').addEventListener('click', () => {
+    generateFormNewCharacter();
+    toggleMobileNav();
+})

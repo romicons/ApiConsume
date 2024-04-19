@@ -25,7 +25,7 @@ const createCardHouses = (houses) => {
                 <h3>${Motto}</h3>
                 <button class="view_characters_btn" data-cardid="${id}">
                     <i class="fa-solid fa-arrow-right-to-bracket"></i>
-                    <span>View characters</span>
+                    <span>View more</span>
                 </button>
             </div>
             `;

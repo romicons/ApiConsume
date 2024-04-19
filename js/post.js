@@ -134,10 +134,173 @@ const validateNewHouse = () => {
                 }
             })
             .catch(err => {
-                renderError((err), generateFormNewHouse());
+                renderError((err), generateFormNewHouse);
             });
     }
 };
 
+//      CREATE A NEW CHARACTER
 
-   
+const createNewCharacter = (characterName, characterHouse, gender, avatar, state, description, biography) => {
+    const newCharacter = {
+        Name: characterName,
+        GreatHousId: characterHouse,
+        Gender: gender,
+        Avatar: avatar,
+        State: state,
+        Description: description,
+        Biography: biography
+    };
+  
+    fetch(`${baseData}/${characterHouse}/Characters`, {
+        method: "POST",
+        headers: {"Content-Type": "application/json",},
+        body: JSON.stringify(newCharacter),
+    })
+    .then((res) => {
+      if (res.ok) {
+        return res.json();
+      }
+    })
+    .then(() => { getHouseCharacters(`${characterHouse}`)})
+    .catch((err) => () => {
+        renderError(err)
+        cardsContainer.innerHTML = '';
+    });
+};
+
+const generateFormNewCharacter = () => {
+    cardsContainer.innerHTML = '';
+    setStyleFlex(document.getElementById('render-spinner'));
+    setTimeout (() => {
+        setStyleNone(document.getElementById('render-spinner'));
+        cardsContainer.innerHTML += `
+        <form class="character-form">
+            <h2>Add Character</h2>
+            <div>
+                <label for="new-character-name">
+                    Name
+                </label>
+                <input type="text" id="new-character-name" required>
+                <label for="new-character-house">
+                    House
+                </label>
+                <select id="new-character-house" class="from-house" required>
+                </select>
+            </div>
+            <div>
+                <label for="new-character-gender">
+                    Gender
+                </label>
+                <select id="new-character-gender" required>
+                    <option value="Other/Unknown">Other/Unknown</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+                <label for="new-character-state">
+                    State
+                </label>
+                <select id="new-character-state" required>
+                    <option value="Unknown">Unknown</option>
+                    <option value="Alive">Alive</option>
+                    <option value="Dead">Dead</option>
+                </select>
+            </div>
+            <div>
+                <label for="new-character-avatar">
+                    Portrait
+                </label>
+                <input type="url" id="new-character-avatar" required>
+            </div>
+            <div>
+                <label for="new-character-description">
+                    Description
+                </label>
+                <textarea id="new-character-description" required maxlength="730"></textarea>
+            </div>
+            <div>
+                <label for="new-character-biography">
+                    Biography
+                </label>
+                <textarea id="new-character-biography" required></textarea>
+            </div>
+            <div>
+                <button class="negative-btn abort_new_character">
+                    <i class="fa-solid fa-xmark"></i>
+                    <span>Cancel</span>
+                </button>
+                <button type="submit" class="edit-btn save_new_character">
+                    <i class="fa-solid fa-check"></i>
+                    <span>Save</span>
+                </button>
+            </div>
+        </form>
+        `;
+        linkHousesWithSelect();
+        document.querySelector('.abort_new_character').addEventListener('click', () => {
+            getGreatHouses(baseData);
+        });
+        document.querySelector('.character-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            validateNewCharacter(); 
+        });
+    }, 2000)
+};
+
+const validateNewCharacter = () => {
+    const newCharacterName = document.getElementById('new-character-name').value.trim();
+    const newCharacterGreatHouse = document.getElementById('new-character-house').value;
+    const newCharacterGender = document.getElementById('new-character-gender').value;
+    const newCharacterAvatar = document.getElementById('new-character-avatar').value;
+    const newCharacterState = document.getElementById('new-character-state').value;
+    const newCharacterDescription = document.getElementById('new-character-description').value.trim();
+    const newCharacterBiography = document.getElementById('new-character-biography').value.trim();
+
+    if (newCharacterName === '') {
+        formError(
+            document.getElementById('new-character-name'),
+            'Please provide a name for the character.'
+        );
+    } else if (!imgFromUrl(newCharacterAvatar)) {
+        formError(
+            document.getElementById('new-character-avatar'),
+            'The URL provided is not valid. Please provide an image that works.'
+        );
+    } else if (newCharacterDescription === '') {
+        formError(
+            document.getElementById('new-character-description'),
+            'Please provide a description for the character.'
+        );
+    } else if (newCharacterBiography === '') {
+        formError(
+            document.getElementById('new-character-biography'),
+            'Please provide the biography of the character'
+        );
+    } else {
+        fetch(`${baseData}/${newCharacterGreatHouse}`)
+            .then(res => res.json())
+            .then(characters => {
+                const {Members} = characters
+                    const characterExists = Members.some(member => member.Name === newCharacterName);
+                    if (characterExists) {
+                        formError(
+                            document.getElementById('new-character-name'),
+                            'This character already exists.'
+                        );
+                    } else {
+                        createNewCharacter(
+                            newCharacterName,
+                            newCharacterGreatHouse,
+                            newCharacterGender,
+                            newCharacterAvatar,
+                            newCharacterState,
+                            newCharacterDescription,
+                            newCharacterBiography
+                        );
+                    }
+                }) 
+            .catch(err => {
+                renderError((err), generateFormNewCharacter);
+            });
+    }
+};

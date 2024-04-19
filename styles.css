@@ -51,10 +51,6 @@ main {
   padding-block: 1rem;
 }
 
-section {
-  margin: 0 auto;
-}
-
 .button {
   --offset: 5px;
   --border-size: 2px;
@@ -325,6 +321,7 @@ section {
     gap: 1rem;
     padding-inline: 2rem;
     width: 70%;
+    min-height: 50%;
   }
 }
 .house-form h2 {
@@ -712,7 +709,7 @@ section {
     gap: 1rem;
   }
 }
-@media screen and (min-width: 890px) {
+@media screen and (min-width: 1000px) {
   .character-form {
     width: 70%;
   }
@@ -806,6 +803,8 @@ nav {
   align-items: center;
   justify-content: space-between;
   position: sticky;
+  top: 0;
+  z-index: 1000;
   background-color: var(--clr-secondary);
   color: var(--clr-dark);
   box-shadow: var(--box-shadow);

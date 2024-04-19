@@ -9,17 +9,20 @@ const setStyleFlex = (element) => {
 };
 
 const toggleMobileNav = () => {
-    const navItems = document.querySelector('.nav-items');
-    const navBtn = document.getElementById('hamb-menu');
-    
-    navItems.classList.toggle('open');
+    if (window.innerWidth <= 800) {
+        const navItems = document.querySelector('.nav-items');
+        const navBtn = document.getElementById('hamb-menu');
+        
+        navItems.classList.toggle('open');
 
-    if (navItems.classList.contains('open')) {
-        navBtn.innerHTML = '<i class="fa-solid fa-xmark"></i>';
-    } else {
-        navBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
+        if (navItems.classList.contains('open')) {
+            navBtn.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+        } else {
+            navBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
+        }
     }
 };
+
 
 //    ACTIVATE DARK/LIGHT MODE
 
@@ -38,7 +41,31 @@ const toggleDarkMode = () => {
         document.getElementById('render-spinner').style.filter = 'invert(1)';
     }
     localStorage.setItem('darkMode', darkMode);
-}
+    toggleMobileNav();
+};
+
+//      CONECT HOUSES WITH THE HOUSE SELECTS
+
+const linkHousesWithSelect = () => {
+    const housesSelects = document.getElementsByClassName('from-house');
+
+    fetch(baseData)
+        .then(res => res.json())
+        .then(data => {
+            for (let select of housesSelects) {
+                if (select.classList.contains('filter')) {
+                    select.innerHTML = `<option value="">Choose...</option>`;
+                } else {
+                    select.innerHTML = '';
+                }
+                data.forEach(house => {
+                    select.innerHTML += `<option value="${house.id}">${house.HouseName}</option>`;
+                });
+            }
+        })
+        .catch(err => renderError(err));
+};
+
 
 //      CHANGE CARD SHADOW 
 
@@ -86,7 +113,6 @@ const renderError = (errorDetail, callFunction) => {
             </button>
         </div>
     `
-
     const closeError = document.getElementById('close-error')
     closeError.addEventListener('click', () => {
         setStyleNone(errorContainer);
@@ -117,4 +143,5 @@ const capitalizeFirstLetter = (string) => {
 
 const initializeApp = () => {
     getGreatHouses(baseData);
+    linkHousesWithSelect();
 }
