@@ -57,7 +57,6 @@ const getHouseCharacters = (idHouse) => {
 
 const createHouseCharacters = (houseData, houseCharacters) => {
     const {Sigil, SignatureColor, HouseName, Story, id:idHouse, Members } = houseData;
-
     cardsContainer.innerHTML = '';
     setStyleFlex(document.getElementById('render-spinner'));
     setTimeout (() => {
