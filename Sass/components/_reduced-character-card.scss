@@ -5,7 +5,7 @@
     flex-flow: column wrap;
     gap: 1rem;
     padding: 1rem;
-    min-height: 36rem;
+    min-height: 40rem;
     max-height: 45rem;
     width: 90%;
     border: none;
@@ -28,10 +28,9 @@
     }
 
     img {
-        max-width: 10rem;
-        max-height: 10rem;
+        max-height: 8rem;
         border-radius: 50%;
-        object-fit: contain;
+        object-fit: cover;
         
         @include img-frame;
     }
@@ -40,7 +39,8 @@
         font-family: 'Explora', sans-serif;
         font-weight: bold;
         font-size: 1.5rem;
-        text-align: center;
+        text-align: justify;
+        padding-inline: 1rem;
     }
 
     button {

@@ -19,7 +19,7 @@
     <body>
         <nav>
             <div>
-                <h1>
+                <h1 id="go-home-btn">
                     <svg fill="none" height="70" viewBox="0 10 120 180" width="70" xmlns="http://www.w3.org/2000/svg" aria-label="The Iron Throne"><path clip-rule="evenodd" d="m40.789 68.9188-3.605-21.215 11.828 13.518zm60.211-7.063 11.197-10.586-4.15 17.897zm14.961 9.399-1.923 5.127 3.154 8.858-2.239 1.81-2.761-4.118-16.152 27.3672c-.573 1.348-.915 2.15-.915 2.15l-5.597.107 6.081-18.7882-2.112-5.688-5.26 3.857-4.664 20.7342-5.125.099-1.418-28.4852-3.997-5.067-3.681 5.608 2.884 28.0632-4.818.093-4.104-16.4602-4.971-3.328-2.237 5.73 5.019 14.1792-5.968.115-.671-1.655-16.89-29.7632-3.955 2.017-1.891-2.394 5.046-5.123-6.388-9.156c-.226-3.375 2.519-4.865 5.778-4.211l4.182 11.579 7.012-1.132.853 2.997-3.25 1.657 3.008 5.333c2.902-.195 5.205-1.888 6.81-5.318l-2.923-8.361-3.503 1.012c-1.593-4.889 3.493-8.353 3.493-8.353l-1.875-7.208-1.967-.034c-1.616-5.696 6.546-8.013 8.137-2.407l-1.589 1.108 2.132 7.134s5.747.026 7.483 5.19l-2.916.843 1.497 5.11c2.679.428 5.499-.318 7.817-2.144l.074-6.801-4.302.016-.576-3.506 6.771-1.927.508-7.315c-3.2-1.797-2.369-7.366 1.867-7.503 4.577-.146 5.431 6.058 2.199 7.679l.627 6.77 6.614 2.31-.623 3.43-4.086.015-.016 5.717c2.558 2.224 5.663 3.083 8.879 2.66l1.335-3.889-3.717-3.394 2.063-2.665 5.092 1.074s1.569-6.878 2.153-9.046c1.098-4.078 7.542-1.847 5.973 1.604-1.133 2.494-3.76 8.724-3.76 8.724l4.972 3.275-.259 3.072-4.802.177-2.473 6.474c1.21 4.088 3.639 6.276 7.227 6.52l2.498-4.235-4.262-.188.455-3.154 8.315-1.694 2.807-4.518c-2.161-2.872 1.3-8.047 5.344-5.932 3.735 1.953 2.1 7.287-1.523 7.566zm-35.975-17.22 10.399-17.58-.072 22.953zm-19.461-17.757 9.046 17.65-9.884 3.098zm-18.877 72.2642 6.331-.465 4.786 8.114-.12 6.703h3.911l2.588-5.618 31.668.685 2.273 4.934h3.911l-.102-5.674 5.292-8.679h7.029l-.465 17.013 6.64 21.696-78.26.232 4.983-22.394z" fill-rule="evenodd"/></svg>
                         GoT Data
                 </h1>
@@ -60,7 +60,7 @@
                 <form id="search-form">
                         <h2>Search by</h2>
                     <div>
-                        <select name="House" id="house-search">
+                        <select name="House" id="house-search" class="from-house filter">
                             <option value="House">House...</option>
                             <option value="Baratheon">Baratheon</option>
                             <option value="Frey">Frey</option>
@@ -107,117 +107,14 @@
             </div>
         
             <section id="characters-data">
+              
                 <div id="warning-container">
-        
                 </div>
                 <div class="content">
-                    <!--
-               
-                    <form class="character-form">
-                        <h2>Add Character</h2>
-                        <div>
-                            <label for="new-character-name">
-                                Name
-                            </label>
-                            <input type="text" id="new-character-name" required>
-                            <label for="new-character-house">
-                                House
-                            </label>
-                            <select id="new-character-house" required>
-                                <option>Choose...</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label for="new-character-gender">
-                                Gender
-                            </label>
-                            <select id="new-character-gender" required>
-                                <option>Choose...</option>
-                                <option value="Male">Male</option>
-                                <option value="Female">Female</option>
-                                <option value="Other/Unknown">Other/Unknown</option>
-                            </select>
-                            <label for="new-character-state">
-                                State
-                            </label>
-                            <select id="new-character-state" required>
-                                <option>Choose...</option>
-                                <option value="Alive">Alive</option>
-                                <option value="Dead">Dead</option>
-                                <option value="Unknown">Unknown</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label for="new-character-avatar">
-                                Portrait
-                            </label>
-                            <input type="url" id="new-character-avatar" required>
-                        </div>
-                        <div>
-                            <label for="new-character-description">
-                                Description
-                            </label>
-                            <textarea id="new-character-description" required></textarea>
-                        </div>
-                        <div>
-                            <label for="new-character-biography">
-                                Biography
-                            </label>
-                            <textarea id="new-character-biography" required></textarea>
-                        </div>
-                        <div>
-                            <button class="negative-btn">
-                                <i class="fa-solid fa-xmark"></i>
-                                <span>Cancel</span>
-                            </button>
-                            <button class="edit-btn">
-                                <i class="fa-solid fa-check"></i>
-                                <span>Save</span>
-                            </button>
-                        </div>
-                    </form>
-
-                    <form class="house-form">
-                        <h2>Add House</h2>
-                        <div>
-                            <label for="new-house-name">
-                                Name
-                            </label>
-                            <input type="text" id="new-house-name" required>
-                            <label for="new-house-motto">
-                                Motto
-                            </label>
-                            <input type="text" id="new-house-motto" required>
-                        </div>
-                        <div>
-                            <div>
-                                <label for="new-house-sigil">
-                                    Emblem
-                                </label>
-                                <input type="url" id="new-house-sigil" required>
-                            </div>
-                            <div>
-                                <label for="new-house-color">
-                                    Signature color
-                                </label>
-                                <input type="color" id="new-house-color" value="#FFFFFF" aria-label="House color signature">
-                            </div>
-                        </div>
-                        <div>
-                            <button class="negative-btn">
-                                <i class="fa-solid fa-xmark"></i>
-                                <span>Cancel</span>
-                            </button>
-                            <button class="edit-btn">
-                                <i class="fa-solid fa-check"></i>
-                                <span>Save</span>
-                            </button>
-                        </div>
-                    </form>
-
-                   
                 </div>
+              
             </section>
+
         </main>
         <footer>
                 <ul class="social-networks">
@@ -234,6 +131,8 @@
                 <p>© 2024 Romina Constantinoff. All rights reserved.</p>
         </footer>
     <script src="js/functions.js"></script>
+    <script src="js/get.js"></script>
+    <script src="js/post.js"></script>
     <script src="js/main.js"></script>
     </body>
 </html>
