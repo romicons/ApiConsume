@@ -124,15 +124,12 @@ const renderError = (errorDetail, callFunction) => {
 
 const imgFromUrl = (url) => {
     const validLinks = [
-      /^(https?:\/\/.*)(\.jpg|\.png)?$/i,
-      /^data:image\/png/i,
-      /^data:image\/jpeg/i,
-      /^data:image\/apng/i,
-      /^data:image\/ajpeg/i
+        /^(https?:\/\/.*\.(jpg|png))$/i,
+        /^data:image\/(png|jpeg|apng|ajpeg);base64,/i  
     ];
-
     return validLinks.some(regex => regex.test(url));
 };
+
 
 
 const capitalizeFirstLetter = (string) => {

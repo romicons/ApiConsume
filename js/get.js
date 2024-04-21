@@ -77,11 +77,11 @@ const createHouseCharacters = (houseData, houseCharacters) => {
                 </p>
             </div>
             <div>
-                <button class="negative-btn delete_house_btn" data-cardId="${idHouse}">
+                <button class="negative-btn delete_house_btn"">
                     <i class="fa-solid fa-trash"></i>
                     <span>Delete House</span>
                 </button>
-                <button class="positive-btn edit_house_btn" data-cardId="${idHouse}">
+                <button class="positive-btn edit_house_btn">
                     <i class="fa-solid fa-pen"></i>
                     <span>Edit House</span>
                 </button>
@@ -125,8 +125,11 @@ const createHouseCharacters = (houseData, houseCharacters) => {
                     </div>
                 `;
             });
+            document.querySelector('.delete_house_btn').addEventListener('click', () => {generateHouseModalWarning(idHouse)});
+
             const characterCards = document.querySelectorAll('.reduced-character-card');
             characterCards.forEach(card => {setInnerShadowColor(card, SignatureColor);});
+            
             viewCharacterDetails(document.querySelectorAll(".view_more_details_btn"));}
             document.querySelector('.back_to_great_houses').addEventListener('click', () => { getGreatHouses(baseData) });
     }, 2000)
@@ -193,11 +196,11 @@ const createCharacterExtendedCard = (character, house) => {
                     </p>
                 </div>
                 <div>
-                    <button class="negative-btn delete_character_btn" data-cardId="${id}">
+                    <button class="negative-btn delete_character_btn">
                         <i class="fa-solid fa-trash"></i>
                         <span>Delete</span>
                     </button>
-                    <button class="edit-btn edit_character_btn" data-cardId="${id}">
+                    <button class="edit-btn edit_character_btn"">
                         <i class="fa-solid fa-pen"></i>
                         <span>Edit</span>
                     </button>
@@ -207,6 +210,6 @@ const createCharacterExtendedCard = (character, house) => {
         setInnerShadowColor(document.querySelector('.extended-character-card'), `${SignatureColor}`);
         document.querySelector('.back_to_house_characters').addEventListener('click', () => { getHouseCharacters(idHouse)});
         //editCharacter(document.querySelector(".edit_character_btn"));
-        //deleteCharacter(document.querySelector(".delete_character_btn"));
+        document.querySelector('.delete_character_btn').addEventListener('click', () => {generateCharacterModalWarning(idHouse, id)});
     }, 2000);
 };
