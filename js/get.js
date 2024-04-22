@@ -56,38 +56,38 @@ const getHouseCharacters = (idHouse) => {
 };
 
 const createHouseCharacters = (houseData, houseCharacters) => {
-    const {Sigil, SignatureColor, HouseName, Story, id:idHouse, Members } = houseData;
+    const { Sigil, SignatureColor, HouseName, Story, id:idHouse, Members } = houseData;
     cardsContainer.innerHTML = '';
     setStyleFlex(document.getElementById('render-spinner'));
     setTimeout (() => {
         setStyleNone(document.getElementById('render-spinner'));
         cardsContainer.innerHTML += `
-        <div class="house-information-section">
-            <div>
-                <button class="back_to_great_houses">
-                    <i class="fa-solid fa-arrow-left"></i>
-                    <span>Go back</span>
-                </button>
-                <img src="${Sigil}" class="house-emblem" alt="${HouseName} Emblem">
+            <div class="house-information-section">
+                <div>
+                    <button class="back_to_great_houses">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        <span>Go back</span>
+                    </button>
+                    <img src="${Sigil}" class="house-emblem" alt="${HouseName} Emblem">
+                </div>
+                <h2>${HouseName}</h2>
+                <div>
+                    <p>
+                        ${Story}
+                    </p>
+                </div>
+                <div>
+                    <button class="negative-btn delete_house_btn">
+                        <i class="fa-solid fa-trash"></i>
+                        <span>Delete House</span>
+                    </button>
+                    <button class="positive-btn edit_house_btn">
+                        <i class="fa-solid fa-pen"></i>
+                        <span>Edit House</span>
+                    </button>
+                </div>
             </div>
-            <h2>${HouseName}</h2>
-            <div>
-                <p>
-                    ${Story}
-                </p>
-            </div>
-            <div>
-                <button class="negative-btn delete_house_btn" data-cardId="${idHouse}">
-                    <i class="fa-solid fa-trash"></i>
-                    <span>Delete House</span>
-                </button>
-                <button class="positive-btn edit_house_btn" data-cardId="${idHouse}">
-                    <i class="fa-solid fa-pen"></i>
-                    <span>Edit House</span>
-                </button>
-            </div>
-        </div>
-        `
+        `;
         if (Members.length === 0) {
             cardsContainer.innerHTML += `
             <div class="no-content">
@@ -101,7 +101,7 @@ const createHouseCharacters = (houseData, houseCharacters) => {
                     <p>Looks like this house doesn't have any characters yet. Please try to add some.</p>
                 </div>
             </div>
-            `
+            `;
         } else {
             houseCharacters.forEach(character => {
                 const { id, Name, Avatar, Description } = character;
@@ -124,12 +124,14 @@ const createHouseCharacters = (houseData, houseCharacters) => {
                         </div>
                     </div>
                 `;
+                const characterCards = document.querySelectorAll('.reduced-character-card');
+                characterCards.forEach(card => {setInnerShadowColor(card, SignatureColor);});
+                viewCharacterDetails(document.querySelectorAll(".view_more_details_btn"));
             });
-            const characterCards = document.querySelectorAll('.reduced-character-card');
-            characterCards.forEach(card => {setInnerShadowColor(card, SignatureColor);});
-            viewCharacterDetails(document.querySelectorAll(".view_more_details_btn"));}
-            document.querySelector('.back_to_great_houses').addEventListener('click', () => { getGreatHouses(baseData) });
-    }, 2000)
+        }
+        document.querySelector('.delete_house_btn').addEventListener('click', () => {generateHouseModalWarning(idHouse)});
+        document.querySelector('.back_to_great_houses').addEventListener('click', () => { getGreatHouses(baseData) });
+    }, 2000);
 };
 
 const viewCharacterDetails = (btns) => {
@@ -193,11 +195,11 @@ const createCharacterExtendedCard = (character, house) => {
                     </p>
                 </div>
                 <div>
-                    <button class="negative-btn delete_character_btn" data-cardId="${id}">
+                    <button class="negative-btn delete_character_btn">
                         <i class="fa-solid fa-trash"></i>
                         <span>Delete</span>
                     </button>
-                    <button class="edit-btn edit_character_btn" data-cardId="${id}">
+                    <button class="edit-btn edit_character_btn"">
                         <i class="fa-solid fa-pen"></i>
                         <span>Edit</span>
                     </button>
@@ -207,6 +209,6 @@ const createCharacterExtendedCard = (character, house) => {
         setInnerShadowColor(document.querySelector('.extended-character-card'), `${SignatureColor}`);
         document.querySelector('.back_to_house_characters').addEventListener('click', () => { getHouseCharacters(idHouse)});
         //editCharacter(document.querySelector(".edit_character_btn"));
-        //deleteCharacter(document.querySelector(".delete_character_btn"));
+        document.querySelector('.delete_character_btn').addEventListener('click', () => {generateCharacterModalWarning(idHouse, id)});
     }, 2000);
 };
