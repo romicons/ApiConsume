@@ -15,7 +15,7 @@ const generateHouseModalWarning = (idHouse) => {
             if (response.ok) {
                 return response.json();
             } else {
-                throw new Error('Failed to fetch characters for the house.');
+                return [];
             }
         })
         .then(characters => {
@@ -69,6 +69,7 @@ const generateHouseModalWarning = (idHouse) => {
         })
         .catch(err => renderError(err));
 };
+
 
 
 
