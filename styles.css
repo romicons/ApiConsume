@@ -497,7 +497,7 @@ main {
 
 .modal-window {
   display: flex;
-  width: 50%;
+  width: 90%;
   justify-content: center;
   flex-flow: column wrap;
   padding-block: 1rem;
@@ -508,6 +508,11 @@ main {
   color: var(--clr-dark);
   box-shadow: var(--box-shadow);
   border-radius: var(--border-radius);
+}
+@media screen and (min-width: 800px) {
+  .modal-window {
+    width: 50%;
+  }
 }
 .modal-window div:nth-child(1) {
   display: flex;
