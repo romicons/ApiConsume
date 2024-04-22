@@ -14,7 +14,7 @@
 
 .modal-window {
     display: flex;
-    width: 50%;
+    width: 90%;
     justify-content: center;
     flex-flow: column wrap;
     padding-block: 1rem;
@@ -25,6 +25,10 @@
     color: var(--clr-dark);
     box-shadow: var(--box-shadow);
     border-radius: var(--border-radius);
+
+    @media screen and (min-width:800px) {
+        width: 50%;
+    }
 
     div:nth-child(1) {
         display: flex;

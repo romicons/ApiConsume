@@ -29,6 +29,7 @@ const createNewHouse = (houseName, sigil, motto, signatureColor, story) => {
 const generateFormNewHouse = () => {
     cardsContainer.innerHTML = '';
     setStyleFlex(document.getElementById('render-spinner'));
+    setStyleNone(searchBar);
     setTimeout (() => {
         setStyleNone(document.getElementById('render-spinner'));
         cardsContainer.innerHTML += `
@@ -171,6 +172,7 @@ const createNewCharacter = (characterName, characterHouse, gender, avatar, state
 
 const generateFormNewCharacter = () => {
     cardsContainer.innerHTML = '';
+    setStyleNone(searchBar);
     setStyleFlex(document.getElementById('render-spinner'));
     setTimeout (() => {
         setStyleNone(document.getElementById('render-spinner'));

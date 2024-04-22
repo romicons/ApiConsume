@@ -1,4 +1,5 @@
 const cardsContainer = document.querySelector('.content');
+const searchBar = document.getElementById('search-form');
 const baseData = 'https://66173e3eed6b8fa434823b5c.mockapi.io/gotdata/v1/GreatHouses';
 
 
@@ -14,8 +15,10 @@ const getGreatHouses = (fetchUrl) => {
 const createCardHouses = (houses) => {
     cardsContainer.innerHTML= '';
     setStyleFlex(document.getElementById('render-spinner'));
+    setStyleNone(searchBar);
     setTimeout (() => {
         setStyleNone(document.getElementById('render-spinner'));
+        setStyleFlex(searchBar);
         houses.forEach(house => {
             const { HouseName, Sigil, id, Motto,} = house;
             cardsContainer.innerHTML += `
@@ -59,7 +62,9 @@ const createHouseCharacters = (houseData, houseCharacters) => {
     const { Sigil, SignatureColor, HouseName, Story, id:idHouse, Members } = houseData;
     cardsContainer.innerHTML = '';
     setStyleFlex(document.getElementById('render-spinner'));
+    setStyleNone(searchBar);
     setTimeout (() => {
+        setStyleFlex(searchBar);
         setStyleNone(document.getElementById('render-spinner'));
         cardsContainer.innerHTML += `
             <div class="house-information-section">
@@ -161,6 +166,7 @@ const getCharacter = (idHouse, idCharacter) => {
 const createCharacterExtendedCard = (character, house) => {
     cardsContainer.innerHTML = '';
     setStyleFlex(document.getElementById('render-spinner'));
+    setStyleNone(searchBar);
     setTimeout (() => {
         setStyleNone(document.getElementById('render-spinner'));
 
