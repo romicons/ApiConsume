@@ -66,7 +66,6 @@ const linkHousesWithSelect = () => {
         .catch(err => renderError(err));
 };
 
-
 //      CHANGE CARD SHADOW 
 
 const setInnerShadowColor = (element, color) => {

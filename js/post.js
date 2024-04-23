@@ -46,18 +46,16 @@ const generateFormNewHouse = () => {
                     <input type="text" id="new-house-motto" required>
                 </div>
                 <div>
-                    <div>
-                        <label for="new-house-sigil">
-                            Emblem
-                        </label>
-                        <input type="url" id="new-house-sigil" required>
-                    </div>
-                    <div>
-                        <label for="new-house-color">
-                            Signature color
-                        </label>
-                        <input type="color" id="new-house-color" value="#FFFFFF" aria-label="House color signature" required>
-                    </div>
+                    <label for="new-house-sigil">
+                        Emblem
+                    </label>
+                    <input type="url" id="new-house-sigil" required>
+                </div>
+                <div>
+                    <label for="new-house-color">
+                        Signature color
+                    </label>
+                    <input type="color" id="new-house-color" value="#FFFFFF" aria-label="House color signature" required>
                 </div>
                 <div>
                     <label for="new-house-story">
