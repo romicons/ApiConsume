@@ -123,7 +123,7 @@ const renderError = (errorDetail, callFunction) => {
 
 const imgFromUrl = (url) => {
     const validLinks = [
-        /^(https?:\/\/.*\.(jpg|png))$/i,
+        /^(https?:\/\/.*\.(jpg|png|jpeg|apng))$/i,
         /^data:image\/(png|jpeg|apng|ajpeg);base64,/i  
     ];
     return validLinks.some(regex => regex.test(url));

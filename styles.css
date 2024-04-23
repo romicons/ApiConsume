@@ -923,6 +923,7 @@ main {
 @media screen and (min-width: 890px) {
   .edit-character-form {
     gap: 1rem;
+    width: 70%;
   }
 }
 .edit-character-form h2 {
