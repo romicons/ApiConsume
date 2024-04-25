@@ -40,5 +40,9 @@
 
     select {
         @include select-format;
+
+        @media screen and (min-width:700px) {
+            width: auto;
+        }
     }
 }

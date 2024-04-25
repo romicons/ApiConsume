@@ -46,25 +46,27 @@ const toggleDarkMode = () => {
 
 //      CONECT HOUSES WITH THE HOUSE SELECTS
 
-const linkHousesWithSelect = () => {
+const linkHousesWithSelect = async () => {
     const housesSelects = document.getElementsByClassName('from-house');
 
-    fetch(baseData)
-        .then(res => res.json())
-        .then(data => {
-            for (let select of housesSelects) {
-                if (select.classList.contains('filter')) {
-                    select.innerHTML = `<option value="">Choose...</option>`;
-                } else {
-                    select.innerHTML = '';
-                }
-                data.forEach(house => {
-                    select.innerHTML += `<option value="${house.id}">${house.HouseName}</option>`;
-                });
+    try {
+        const res = await fetch(baseData);
+        const data = await res.json();
+
+        for (let select of housesSelects) {
+            if (select.classList.contains('filter')) {
+                select.innerHTML = `<option value="">Choose...</option>`;
+            } else {
+                select.innerHTML = '';
             }
-        })
-        .catch(err => renderError(err));
-};
+            data.forEach(house => {
+                select.innerHTML += `<option value="${house.id}">${house.HouseName}</option>`;
+            });
+        }
+    } catch (err) {
+        renderError(err);
+    };
+};;
 
 //      CHANGE CARD SHADOW 
 

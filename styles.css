@@ -863,16 +863,6 @@ main {
   background-color: var(--clr-accent);
   color: var(--clr-dark);
 }
-@media screen and (min-width: 700px) {
-  .character-form select {
-    width: auto;
-  }
-}
-@media screen and (min-width: 890px) {
-  .character-form select {
-    width: 45%;
-  }
-}
 .character-form textarea {
   width: 100%;
   resize: none;
@@ -889,16 +879,19 @@ main {
 .character-form textarea:active {
   background-color: var(--clr-accent);
 }
-.character-form div {
-  display: grid;
-  gap: 0.2rem;
-}
 @media screen and (min-width: 890px) {
-  .character-form div:nth-child(2), .character-form div:nth-child(3) {
+  .character-form .row-col {
     display: flex;
     justify-content: space-between;
     flex-direction: row;
     gap: 1rem;
+  }
+}
+@media screen and (min-width: 890px) {
+  .character-form .row-col div {
+    display: flex;
+    width: 50%;
+    flex-direction: column;
   }
 }
 .character-form div:nth-child(7) {
@@ -963,16 +956,6 @@ main {
   background-color: var(--clr-accent);
   color: var(--clr-dark);
 }
-@media screen and (min-width: 700px) {
-  .edit-character-form select {
-    width: auto;
-  }
-}
-@media screen and (min-width: 890px) {
-  .edit-character-form select {
-    width: 45%;
-  }
-}
 .edit-character-form textarea {
   width: 100%;
   resize: none;
@@ -990,16 +973,19 @@ main {
 .edit-character-form textarea:active {
   background-color: var(--clr-accent);
 }
-.edit-character-form div {
-  display: grid;
-  gap: 0.2rem;
-}
 @media screen and (min-width: 890px) {
-  .edit-character-form div:nth-child(2), .edit-character-form div:nth-child(3) {
+  .edit-character-form .row-col {
     display: flex;
     justify-content: space-between;
     flex-direction: row;
     gap: 1rem;
+  }
+}
+@media screen and (min-width: 890px) {
+  .edit-character-form .row-col div {
+    display: flex;
+    width: 50%;
+    flex-direction: column;
   }
 }
 .edit-character-form div:nth-child(7) {

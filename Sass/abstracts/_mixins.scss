@@ -54,10 +54,6 @@
         background-color: var(--clr-accent);
         color: var(--clr-dark);
     }
-
-    @media screen and (min-width:700px) {
-        width: auto;
-    }
 }
 
 @mixin textarea-format {

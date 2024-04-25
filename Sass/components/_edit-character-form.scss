@@ -31,10 +31,6 @@
     select {
         @include select-format;
         width: 100%;
-
-        @media screen and (min-width:890px) {
-            width: 45%;
-        }
     }
 
     textarea {
@@ -42,17 +38,20 @@
         min-height: 9rem;
     }
 
-    div {
-        display: grid;
-        gap: 0.2rem;
-    }
-
-    div:nth-child(2), div:nth-child(3) {
+    .row-col {
         @media screen and (min-width:890px) {
             display: flex;
             justify-content: space-between;
             flex-direction: row;
             gap: 1rem;
+        }
+
+        div {
+            @media screen and (min-width:890px) {
+                display: flex;
+                width: 50%;
+                flex-direction: column;
+            }
         }
     }
 

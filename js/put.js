@@ -210,28 +210,34 @@ const editCharacter = (idCharacter, idHouse, editedName, editedHouse, editedGend
       });
 };
 
-const generateEditCharacterForm = (idHouse, idCharacter) => {
-    fetch(`${baseData}/${idHouse}/Characters/${idCharacter}`)
-        .then(res => res.json())
-        .then(data => {
-            const { Name, GreatHousId, Gender, Avatar, State, Description, Biography } = data;
+const generateEditCharacterForm = async (idHouse, idCharacter) => {
+    try {
+        const res = await fetch(`${baseData}/${idHouse}/Characters/${idCharacter}`);
+        const data = await res.json();
 
-            const form = document.createElement('form');
-            form.classList.add('edit-character-form');
-            
-            form.innerHTML = `
-                <h2>Edit Character</h2>
+        const { Name, GreatHousId, Gender, Avatar, State, Description, Biography } = data;
+
+        const form = document.createElement('form');
+        form.classList.add('edit-character-form');
+        console.log(GreatHousId);
+        form.innerHTML = `
+            <h2>Edit Character</h2>
+            <div class="row-col">
                 <div>
                     <label for="character-name-edited">
                         Name
                     </label>
                     <input type="text" id="character-name-edited" value="${Name}" required>
+                </div>
+                <div>
                     <label for="character-house-edited">
                         House
                     </label>
                     <select id="character-house-edited" class="from-house" required>
                     </select>
                 </div>
+            </div>
+            <div class="row-col">
                 <div>
                     <label for="character-gender-edited">
                         Gender
@@ -241,6 +247,8 @@ const generateEditCharacterForm = (idHouse, idCharacter) => {
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
                     </select>
+                </div>
+                <div>
                     <label for="character-state-edited">
                         State
                     </label>
@@ -250,53 +258,54 @@ const generateEditCharacterForm = (idHouse, idCharacter) => {
                         <option value="Dead">Dead</option>
                     </select>
                 </div>
-                <div>
-                    <label for="character-avatar-edited">
-                        Portrait
-                    </label>
-                    <input type="url" id="character-avatar-edited" value="${Avatar}" required>
-                </div>
-                <div>
-                    <label for="character-description-edited">
-                        Description
-                    </label>
-                    <textarea id="character-description-edited" required maxlength="730">${Description}</textarea>
-                </div>
-                <div>
-                    <label for="character-biography-edited">
-                        Biography
-                    </label>
-                    <textarea id="character-biography-edited" required>${Biography}</textarea>
-                </div>
-                <div>
-                    <button class="negative-btn abort_edit_character">
-                        <i class="fa-solid fa-xmark"></i>
-                        <span>Cancel</span>
-                    </button>
-                    <button type="submit" class="edit-btn save_edit_character">
-                        <i class="fa-solid fa-check"></i>
-                        <span>Save</span>
-                    </button>
-                </div>
-            `;
-            cardsContainer.appendChild(form);
-            linkHousesWithSelect();
-            document.getElementById('character-gender-edited').value = Gender;
-            document.getElementById('character-state-edited').value = State;
-            document.getElementById('character-house-edited').value = GreatHousId;
+            </div>
+            <div>
+                <label for="character-avatar-edited">
+                    Portrait
+                </label>
+                <input type="url" id="character-avatar-edited" value="${Avatar}" required>
+            </div>
+            <div>
+                <label for="character-description-edited">
+                    Description
+                </label>
+                <textarea id="character-description-edited" required maxlength="730">${Description}</textarea>
+            </div>
+            <div>
+                <label for="character-biography-edited">
+                    Biography
+                </label>
+                <textarea id="character-biography-edited" required>${Biography}</textarea>
+            </div>
+            <div>
+                <button class="negative-btn abort_edit_character">
+                    <i class="fa-solid fa-xmark"></i>
+                    <span>Cancel</span>
+                </button>
+                <button type="submit" class="edit-btn save_edit_character">
+                    <i class="fa-solid fa-check"></i>
+                    <span>Save</span>
+                </button>
+            </div>
+        `;
+        cardsContainer.appendChild(form);
+        linkHousesWithSelect();
+        document.getElementById('character-gender-edited').value = Gender;
+        document.getElementById('character-state-edited').value = State;
+        document.getElementById('character-house-edited').value = GreatHousId;
+        console.log(document.getElementById('character-house-edited').value)
 
-            form.querySelector('.abort_edit_character').addEventListener('click', (e) => {
-                (e).preventDefault();
-                setStyleNone(form);
-            });
-            form.addEventListener('submit', (e) => {
-                e.preventDefault();
-                validateEditCharacter(idHouse, idCharacter);
-            });
-        })
-        .catch(err => {
-            renderError((err), generateFormNewCharacter);
+        form.querySelector('.abort_edit_character').addEventListener('click', (e) => {
+            e.preventDefault();
+            setStyleNone(form);
         });
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            validateEditCharacter(idHouse, idCharacter);
+        });
+    } catch (err) {
+        renderError(err);
+    }
 };
 
 const validateEditCharacter = (idHouse, idCharacter) => {
