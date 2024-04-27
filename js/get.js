@@ -86,7 +86,7 @@ const createHouseCharacters = (houseData, houseCharacters) => {
                         <i class="fa-solid fa-trash"></i>
                         <span>Delete House</span>
                     </button>
-                    <button class="positive-btn edit_house_btn">
+                    <button class="positive-btn edit_house_btn" data-cardId="${idHouse}">
                         <i class="fa-solid fa-pen"></i>
                         <span>Edit House</span>
                     </button>
@@ -135,6 +135,7 @@ const createHouseCharacters = (houseData, houseCharacters) => {
             });
         }
         document.querySelector('.delete_house_btn').addEventListener('click', () => {generateHouseModalWarning(idHouse)});
+        document.querySelector('.edit_house_btn').addEventListener('click', () => {generateEditHouseForm(idHouse)});
         document.querySelector('.back_to_great_houses').addEventListener('click', () => { getGreatHouses(baseData) });
     }, 2000);
 };
@@ -214,7 +215,7 @@ const createCharacterExtendedCard = (character, house) => {
         `;
         setInnerShadowColor(document.querySelector('.extended-character-card'), `${SignatureColor}`);
         document.querySelector('.back_to_house_characters').addEventListener('click', () => { getHouseCharacters(idHouse)});
-        //editCharacter(document.querySelector(".edit_character_btn"));
+        document.querySelector(".edit_character_btn").addEventListener('click', () => { generateEditCharacterForm(idHouse, id) })
         document.querySelector('.delete_character_btn').addEventListener('click', () => {generateCharacterModalWarning(idHouse, id)});
     }, 2000);
 };

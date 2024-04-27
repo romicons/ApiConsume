@@ -46,18 +46,16 @@ const generateFormNewHouse = () => {
                     <input type="text" id="new-house-motto" required>
                 </div>
                 <div>
-                    <div>
-                        <label for="new-house-sigil">
-                            Emblem
-                        </label>
-                        <input type="url" id="new-house-sigil" required>
-                    </div>
-                    <div>
-                        <label for="new-house-color">
-                            Signature color
-                        </label>
-                        <input type="color" id="new-house-color" value="#FFFFFF" aria-label="House color signature" required>
-                    </div>
+                    <label for="new-house-sigil">
+                        Emblem
+                    </label>
+                    <input type="url" id="new-house-sigil" required>
+                </div>
+                <div>
+                    <label for="new-house-color">
+                        Signature color
+                    </label>
+                    <input type="color" id="new-house-color" value="#FFFFFF" aria-label="House color signature" required>
                 </div>
                 <div>
                     <label for="new-house-story">
@@ -179,34 +177,42 @@ const generateFormNewCharacter = () => {
         cardsContainer.innerHTML += `
         <form class="character-form">
             <h2>Add Character</h2>
-            <div>
-                <label for="new-character-name">
-                    Name
-                </label>
-                <input type="text" id="new-character-name" required>
-                <label for="new-character-house">
-                    House
-                </label>
-                <select id="new-character-house" class="from-house" required>
-                </select>
+            <div class="row-col">
+                <div>
+                    <label for="new-character-name">
+                        Name
+                    </label>
+                    <input type="text" id="new-character-name" required>
+                </div>
+                <div>
+                    <label for="new-character-house">
+                        House
+                    </label>
+                    <select id="new-character-house" class="from-house" required>
+                    </select>
+                </div>
             </div>
-            <div>
-                <label for="new-character-gender">
-                    Gender
-                </label>
-                <select id="new-character-gender" required>
-                    <option value="Other/Unknown">Other/Unknown</option>
-                    <option value="Male">Male</option>
-                    <option value="Female">Female</option>
-                </select>
-                <label for="new-character-state">
-                    State
-                </label>
-                <select id="new-character-state" required>
-                    <option value="Unknown">Unknown</option>
-                    <option value="Alive">Alive</option>
-                    <option value="Dead">Dead</option>
-                </select>
+            <div class="row-col">
+                <div>
+                    <label for="new-character-gender">
+                        Gender
+                    </label>
+                    <select id="new-character-gender" required>
+                        <option value="Other/Unknown">Other/Unknown</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="new-character-state">
+                        State
+                    </label>
+                    <select id="new-character-state" required>
+                        <option value="Unknown">Unknown</option>
+                        <option value="Alive">Alive</option>
+                        <option value="Dead">Dead</option>
+                    </select>
+                </div>
             </div>
             <div>
                 <label for="new-character-avatar">
