@@ -220,6 +220,7 @@ const generateEditCharacterForm = async (idHouse, idCharacter) => {
         const form = document.createElement('form');
         form.classList.add('edit-character-form');
         console.log(GreatHousId);
+        linkHousesWithSelect();
         form.innerHTML = `
             <h2>Edit Character</h2>
             <div class="row-col">
@@ -289,7 +290,6 @@ const generateEditCharacterForm = async (idHouse, idCharacter) => {
             </div>
         `;
         cardsContainer.appendChild(form);
-        linkHousesWithSelect();
         document.getElementById('character-gender-edited').value = Gender;
         document.getElementById('character-state-edited').value = State;
         document.getElementById('character-house-edited').value = GreatHousId;

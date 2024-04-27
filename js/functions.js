@@ -55,7 +55,7 @@ const linkHousesWithSelect = async () => {
 
         for (let select of housesSelects) {
             if (select.classList.contains('filter')) {
-                select.innerHTML = `<option value="">Choose...</option>`;
+                select.innerHTML = `<option value="">House...</option>`;
             } else {
                 select.innerHTML = '';
             }

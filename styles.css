@@ -913,7 +913,7 @@ main {
   box-shadow: var(--box-shadow);
   border-radius: var(--border-radius);
 }
-@media screen and (min-width: 890px) {
+@media screen and (min-width: 1100px) {
   .edit-character-form {
     gap: 1rem;
     width: 70%;
