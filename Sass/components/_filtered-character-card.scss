@@ -5,7 +5,7 @@
     flex-flow: column wrap;
     gap: 1rem;
     padding: 1rem;
-    min-height: 40rem;
+    min-height: 42rem;
     max-height: 45rem;
     width: 90%;
     border: none;
@@ -60,10 +60,10 @@
     padding-bottom: 1rem;
 
     div:nth-child(1) {
-        display: flex;
         width: 90%;
-        align-items: center;
+        display: flex;
         justify-content: space-between;
+        align-items: center;
     }
 }
 
@@ -72,7 +72,7 @@
 }
 
 .character-portrait {
-    max-height: 8rem;
+    max-height: 10rem;
     border-radius: 50%;
     object-fit: cover;
     

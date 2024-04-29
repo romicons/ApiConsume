@@ -908,7 +908,7 @@ main {
   flex-flow: column wrap;
   gap: 1rem;
   padding: 1rem;
-  min-height: 40rem;
+  min-height: 42rem;
   max-height: 45rem;
   width: 90%;
   border: none;
@@ -982,10 +982,10 @@ main {
   padding-bottom: 1rem;
 }
 .header-card div:nth-child(1) {
-  display: flex;
   width: 90%;
-  align-items: center;
+  display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .character-emblem {
@@ -993,7 +993,7 @@ main {
 }
 
 .character-portrait {
-  max-height: 8rem;
+  max-height: 10rem;
   border-radius: 50%;
   object-fit: cover;
   border: 0.5em double #757575;

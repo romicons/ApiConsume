@@ -30,7 +30,6 @@ const getCharacters = (firstFilter, secondFilter, thirdFilter) => {
         })
         .catch(err => renderError(err));
 };
-
 const createFilteredCharacters = (characters, houseSigil, houseSignatureColor) => {
     cardsContainer.innerHTML = '';
     setStyleFlex(document.getElementById('render-spinner'));
@@ -40,36 +39,36 @@ const createFilteredCharacters = (characters, houseSigil, houseSignatureColor) =
         setStyleNone(document.getElementById('render-spinner'));
         characters.forEach(character => {
             const { id, Name, Avatar, Description, GreatHousId } = character;
-            cardsContainer.innerHTML += `
-                <div class="filtered-character-card">
-                    <div>
-                        <div class="header-card">
-                            <div>
-                                <h2>${Name}</h2>
-                                <img src="${houseSigil}" alt="${Name} House" class="character-emblem">
-                            </div>
-                            <div>
-                                <img src="${Avatar}" alt="${Name} portrait" class="character-portrait">
-                            </div>
-                        </div>
+            const characterCard = document.createElement('div');
+            characterCard.classList.add('filtered-character-card');
+            characterCard.innerHTML = `
+                <div>
+                    <div class="header-card">
                         <div>
-                            <p>${Description}</p>
+                            <h2>${Name}</h2>
+                            <img src="${houseSigil}" alt="${Name} House" class="character-emblem">
                         </div>
+                        <img src="${Avatar}" alt="${Name} portrait" class="character-portrait">
                     </div>
                     <div>
-                        <button data-houseid="${GreatHousId}" data-cardid="${id}" class="view_more_details_btn">
-                            <i class="fa-solid fa-arrow-right-to-bracket"></i>
-                            <span>View more details</span>
-                        </button>
+                        <p>${Description}</p>
                     </div>
                 </div>
+                <div>
+                    <button data-houseid="${GreatHousId}" data-cardid="${id}" class="view_more_details_btn">
+                        <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                        <span>View more details</span>
+                    </button>
+                </div>
             `;
+            cardsContainer.appendChild(characterCard);
+            viewCharacterDetails(document.querySelectorAll(".view_more_details_btn"));
+            setInnerShadowColor(characterCard, houseSignatureColor); // Aplicar color de sombra aquí
         });
-        const characterCards = document.querySelectorAll('.filtered-character-card');
-        characterCards.forEach(card => {setInnerShadowColor(card, houseSignatureColor);});
-        viewCharacterDetails(document.querySelectorAll(".view_more_details_btn"));
     }, 2000);
 };
+
+
 
 const searchBy = () => {
     let houseFilter = document.getElementById('house-search').value;
