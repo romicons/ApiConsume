@@ -70,6 +70,13 @@
 
 <p>Using the <img alt="Static Badge" src="https://img.shields.io/badge/GET-%233b657a"> method, you'll be able to access all the information stored in the 🌐 API. You can initially get a general overview of all the 🏰 houses stored, then navigate specifically to access each of them. In each 🏠 house, you'll see all the 👥 characters that are part of it in a general manner, and then specifically obtain the details of each 👤 one individually.</p>
 
+<div align="center">
+  
+![watch-details](https://i.imgur.com/T51gJkC.gif)
+<p align="center"><i>Watchs details</i></p>
+  
+</div>
+
 <h2 align="center">Update</h2>
 
 <p>With the <img alt="Static Badge" src="https://img.shields.io/badge/PUT-%233b657a"> method, you have the ability to update and modify the existing information in the 🌐 API, allowing you to 🖊️ edit both the 🏰 houses and 👥 characters that are already stored. This feature provides you with the flexibility to keep the 📚 encyclopedia updated as needed.</p>
