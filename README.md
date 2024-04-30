@@ -44,6 +44,15 @@
   
 </ul>
 
+
+<div align="center">
+  
+![create-a-new-house](https://i.imgur.com/meCDKLY.gif)
+
+<p align="center"><i>Create a New House</i></p>
+  
+</div>
+
 <p>To add new <img alt="Static Badge" src="https://img.shields.io/badge/Characters-%2320130a">, you will need to provide:</p>
 
 <ul>
