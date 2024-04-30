@@ -72,6 +72,8 @@
 
 <h2 align="center">Update</h2>
 
+<p>With the <img alt="Static Badge" src="https://img.shields.io/badge/POST-%233b657a"> method, you have the ability to update and modify the existing information in the 🌐 API, allowing you to 🖊️ edit both the 🏰 houses and 👥 characters that are already stored. This feature provides you with the flexibility to keep the 📚 encyclopedia updated as needed.</p>
+
 <h2 align="center">Delete</h2>
 
 <h2 align="center">Final Clarifications</h2>
