@@ -99,6 +99,15 @@
 <h2 align="center">Delete</h2>
 
 <p>With the <img alt="Static Badge" src="https://img.shields.io/badge/DELETE-%233b657a"> method, you have the ability to  🗑️ delete both 👥 characters and 🏰 houses, if deemed necessary. ⚠️ Warning: Be careful! Once the information is deleted, you won't be able to recover it, so if you delete something important, you'll need to reload all the information again. It's advisable to review carefully before making permanent deletions.</p>
+
+<div align="center">
+  
+![delete-house-character](https://i.imgur.com/H9MT2z4.gif)
+
+<p align="center"><i>Delete House and Character</i></p>
+  
+</div>
+
  
 <h2 align="center">Final Clarifications</h2>
 
