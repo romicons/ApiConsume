@@ -80,7 +80,7 @@
  
 <h2 align="center">Final Clarifications</h2>
 
-<p>Remember, Valar Dohaeris - <i>ALL MEN MUST SERVE</i>. This API is public, and its content can be freely edited by users. We kindly request that you refrain from 🗑️ deleting relevant information, ❌ altering it with malicious intent by providing false data, or adding information that does 🚫 not align with the purpose of the API. This is a plea 🙏 for collaboration to maintain the integrity and usefulness of the platform for everyone.
+<p>Remember, Valar Dohaeris - <i>ALL MEN MUST SERVE</i>. This webapp consumes an API that is public, and its content can be freely edited by users. We kindly request that you refrain from 🗑️ deleting relevant information, ❌ altering it with malicious intent by providing false data, or adding information that does 🚫 not align with the purpose of the API. This is a plea 🙏 for collaboration to maintain the integrity and usefulness of the platform for everyone.
 </p>
 <p>I invite you to contribute to this growing 📚 encyclopedia by adding new 🧑‍🤝‍🧑 characters and 🏠 houses that still remain in the shadows. Your knowledge and passion will help enrich it, and make it even more comprehensive!</p>
 
