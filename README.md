@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="" alt="GoT Data Banner"> 
+<img src="https://i.imgur.com/bRmHyNV.png" alt="GoT Data Banner"> 
   
 </div>
 
