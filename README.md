@@ -20,7 +20,7 @@
 
 </div>
 
-<p align="center"> Welcome to a unique experience in the vast universe of A Song of Ice and Fire.</p>
+<p align="center"> Welcome to a unique experience in the vast universe of A Song of ❄️ Ice and 🔥 Fire.</p>
 
 <p>This attractive and innovative web app invites you to dive deeper than ever into the world created by George R.R. Martin. Connecting to the 'GoT-Data' project, hosted on <img alt="Static Badge" src="https://img.shields.io/badge/Mockapi-%233b657a">, this application generates a detailed digital encyclopedia of your favorite characters, offering you a fascinating window through which to explore the intrigues, passions, and secrets that make up the fabric of Westeros and beyond. </p>
 
@@ -34,12 +34,17 @@
 
 <h2 align="center">Delete</h2>
 
+<h2 align="center">Final Clarifications</h2>
 
-<p>And remember Valar Dohaeris too - ALL MEN MUST SERVE. That's why I invite you to contribute to this growing encyclopedia by adding new characters and houses that still remain in the shadows. Your knowledge and passion will help enrich this encyclopedia and make it even more comprehensive!</p>
+<p>Remember, Valar Dohaeris - ALL MEN MUST SERVE. This API is public, and its content can be freely edited by users. We kindly request that you refrain from 🗑️ deleting relevant information, ❌ altering it with malicious intent by providing false data, or adding information that does 🚫 not align with the purpose of the API. This is a plea 🙏 for collaboration to maintain the integrity and usefulness of the platform for everyone.
+</p>
+<p>I invite you to contribute to this growing encyclopedia by adding 🧑‍🤝‍🧑 new characters and 🏠 houses that still remain in the shadows. Your knowledge and passion will help enrich this 📚 encyclopedia and make it even more comprehensive!</p>
 
 
-<p>So get ready to embark on an exciting journey through the Seven Kingdoms and beyond, where destiny is in your hands and every discovery brings you closer to understanding the dark secrets that lie beneath the surface of Westeros. Go ahead, adventurer, and may the gods guide you on your way!</p>
+<p>So get ready to embark on an exciting journey through the Seven Kingdoms and beyond, where destiny is in your hands and every discovery brings you closer to understanding the dark secrets that lie beneath the surface of Westeros.</p>
 
+<h2 align="center"> Go ahead, adventurer, and may the gods guide you on your way to <a href="https://romicons.github.io/GoT-Data/">GoT Data</a>!
+</h2>
 
 <div align="center">
 
