@@ -28,6 +28,44 @@
 
 <h2 align="center">Create</h2>
 
+<p>Using the <img alt="Static Badge" src="https://img.shields.io/badge/POST-%233b657a"> method, you will be able to expand this encyclopedia by adding both 🏠 Houses and 🧑‍🤝‍🧑 Characters. To create new <img alt="Static Badge" src="https://img.shields.io/badge/Houses-%23f0f5e1">, you will need to provide the following information: </p>
+
+<ul>
+  
+🏷️ Name.
+
+📃 Motto.
+
+📜 History.
+
+🛡️ Sigil.
+
+🎨 Signature Color.
+  
+</ul>
+
+<p>To add new <img alt="Static Badge" src="https://img.shields.io/badge/Characters-%2320130a">, you will need to provide:</p>
+
+<ul>
+  
+🏷️ Name.
+
+🏡 House they belong to.
+
+👤 Gender.
+
+❓ Current Status.
+
+👨‍🎨 Portrait.
+
+📝 Brief Description.
+
+📜 Biography.
+  
+</ul>
+ 
+<p>Once you have provided this information, you can find your houses in the main section and the characters in their respective houses.</p>
+
 <h2 align="center">Read</h2>
 
 <h2 align="center">Update</h2>
@@ -38,7 +76,7 @@
 
 <p>Remember, Valar Dohaeris - ALL MEN MUST SERVE. This API is public, and its content can be freely edited by users. We kindly request that you refrain from 🗑️ deleting relevant information, ❌ altering it with malicious intent by providing false data, or adding information that does 🚫 not align with the purpose of the API. This is a plea 🙏 for collaboration to maintain the integrity and usefulness of the platform for everyone.
 </p>
-<p>I invite you to contribute to this growing encyclopedia by adding 🧑‍🤝‍🧑 new characters and 🏠 houses that still remain in the shadows. Your knowledge and passion will help enrich this 📚 encyclopedia and make it even more comprehensive!</p>
+<p>I invite you to contribute to this growing encyclopedia by adding new 🧑‍🤝‍🧑 characters and 🏠 houses that still remain in the shadows. Your knowledge and passion will help enrich this 📚 encyclopedia and make it even more comprehensive!</p>
 
 
 <p>So get ready to embark on an exciting journey through the Seven Kingdoms and beyond, where destiny is in your hands and every discovery brings you closer to understanding the dark secrets that lie beneath the surface of Westeros.</p>
