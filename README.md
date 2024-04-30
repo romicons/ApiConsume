@@ -73,13 +73,28 @@
 <div align="center">
   
 ![watch-details](https://i.imgur.com/T51gJkC.gif)
-<p align="center"><i>Watchs details</i></p>
+
+<p align="center"><i>Watch details</i></p>
   
 </div>
+
 
 <h2 align="center">Update</h2>
 
 <p>With the <img alt="Static Badge" src="https://img.shields.io/badge/PUT-%233b657a"> method, you have the ability to update and modify the existing information in the 🌐 API, allowing you to 🖊️ edit both the 🏰 houses and 👥 characters that are already stored. This feature provides you with the flexibility to keep the 📚 encyclopedia updated as needed.</p>
+
+<div align="center">
+  
+![edit-house](https://i.imgur.com/ogH2VUe.gif)
+
+<p align="center"><i>Edit House</i></p>
+
+![edit-character](https://i.imgur.com/EjTehjy.gif)
+
+<p align="center"><i>Edit Character</i></p>
+  
+</div>
+
 
 <h2 align="center">Delete</h2>
 
