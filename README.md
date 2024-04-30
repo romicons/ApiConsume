@@ -22,9 +22,9 @@
 
 <p align="center"> Welcome to a unique experience in the vast universe of A Song of Ice and Fire.</p>
 
-<p>This attractive and innovative web app invites you to dive deeper than ever into the world created by George R.R. Martin. Connecting to the 'GoT-Data' project, hosted on Mockapi, this application generates a detailed digital encyclopedia of your favorite characters, offering you a fascinating window through which to explore the intrigues, passions, and secrets that make up the fabric of Westeros and beyond. </p>
+<p>This attractive and innovative web app invites you to dive deeper than ever into the world created by George R.R. Martin. Connecting to the 'GoT-Data' project, hosted on <img alt="Static Badge" src="https://img.shields.io/badge/Mockapi-%233b657a">, this application generates a detailed digital encyclopedia of your favorite characters, offering you a fascinating window through which to explore the intrigues, passions, and secrets that make up the fabric of Westeros and beyond. </p>
 
-<p>Equipped with all the basic functionalities of a CRUD (Create, Read, Update, Delete) system, GoT Data invites you not only to explore the vast world of A Song of Ice and Fire but also to actively contribute to it by adding, editing, or deleting information according to your knowledge and preferences.</p>
+<p>Equipped with all the basic functionalities of a <img alt="Static Badge" src="https://img.shields.io/badge/CRUD-%233b657a"> (Create, Read, Update, Delete) system, GoT Data invites you not only to explore the vast world of A Song of Ice and Fire but also to actively contribute to it by adding, editing, or deleting information according to your knowledge and preferences.</p>
 
 <h2 align="center">Create</h2>
 
