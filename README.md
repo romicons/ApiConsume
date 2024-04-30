@@ -72,10 +72,12 @@
 
 <h2 align="center">Update</h2>
 
-<p>With the <img alt="Static Badge" src="https://img.shields.io/badge/POST-%233b657a"> method, you have the ability to update and modify the existing information in the 🌐 API, allowing you to 🖊️ edit both the 🏰 houses and 👥 characters that are already stored. This feature provides you with the flexibility to keep the 📚 encyclopedia updated as needed.</p>
+<p>With the <img alt="Static Badge" src="https://img.shields.io/badge/PUT-%233b657a"> method, you have the ability to update and modify the existing information in the 🌐 API, allowing you to 🖊️ edit both the 🏰 houses and 👥 characters that are already stored. This feature provides you with the flexibility to keep the 📚 encyclopedia updated as needed.</p>
 
 <h2 align="center">Delete</h2>
 
+<p>With the <img alt="Static Badge" src="https://img.shields.io/badge/DELETE-%233b657a"> method, you have the ability to  🗑️ delete both 👥 characters and 🏰 houses, if deemed necessary. ⚠️ Warning: Be careful! Once the information is deleted, you won't be able to recover it, so if you delete something important, you'll need to reload all the information again. It's advisable to review carefully before making permanent deletions.</p>
+ 
 <h2 align="center">Final Clarifications</h2>
 
 <p>Remember, Valar Dohaeris - <i>ALL MEN MUST SERVE</i>. This API is public, and its content can be freely edited by users. We kindly request that you refrain from 🗑️ deleting relevant information, ❌ altering it with malicious intent by providing false data, or adding information that does 🚫 not align with the purpose of the API. This is a plea 🙏 for collaboration to maintain the integrity and usefulness of the platform for everyone.
