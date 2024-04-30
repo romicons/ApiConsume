@@ -72,6 +72,14 @@
 📜 Biography.
   
 </ul>
+
+<div align="center">
+  
+![create-a-new-character](https://i.imgur.com/sE3B8UN.gif)
+
+<p align="center"><i>Create a New Character</i></p>
+  
+</div>
  
 <p>Once you have provided this information, you can find your houses in the main section and the characters in their respective houses.</p>
 
