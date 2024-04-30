@@ -78,7 +78,7 @@
 
 <p>Remember, Valar Dohaeris - ALL MEN MUST SERVE. This API is public, and its content can be freely edited by users. We kindly request that you refrain from 🗑️ deleting relevant information, ❌ altering it with malicious intent by providing false data, or adding information that does 🚫 not align with the purpose of the API. This is a plea 🙏 for collaboration to maintain the integrity and usefulness of the platform for everyone.
 </p>
-<p>I invite you to contribute to this growing encyclopedia by adding new 🧑‍🤝‍🧑 characters and 🏠 houses that still remain in the shadows. Your knowledge and passion will help enrich this 📚 encyclopedia and make it even more comprehensive!</p>
+<p>I invite you to contribute to this growing 📚 encyclopedia by adding new 🧑‍🤝‍🧑 characters and 🏠 houses that still remain in the shadows. Your knowledge and passion will help enrich it, and make it even more comprehensive!</p>
 
 
 <p>So get ready to embark on an exciting journey through the Seven Kingdoms and beyond, where destiny is in your hands and every discovery brings you closer to understanding the dark secrets that lie beneath the surface of Westeros.</p>
