@@ -68,6 +68,8 @@
 
 <h2 align="center">Read</h2>
 
+<p>Using the <img alt="Static Badge" src="https://img.shields.io/badge/GET-%233b657a"> method, you'll be able to access all the information stored in the 🌐 API. You can initially get a general overview of all the 🏰 houses stored, then navigate specifically to access each of them. In each 🏠 house, you'll see all the 👥 characters that are part of it in a general manner, and then specifically obtain the details of each 👤 one individually.</p>
+
 <h2 align="center">Update</h2>
 
 <h2 align="center">Delete</h2>
