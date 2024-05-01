@@ -38,6 +38,8 @@ const getCharacters = (firstFilter, secondFilter, thirdFilter) => {
 };
 
 const createFilteredCharacters = (characters) => {
+    characters.sort((a, b) => a.Name.localeCompare(b.Name));
+    
     cardsContainer.innerHTML = '';
     setStyleFlex(document.getElementById('render-spinner'));
     setStyleNone(searchBar);

@@ -4,10 +4,15 @@ const deleteHouse = (idHouse) => {
     fetch(`${baseData}/${idHouse}`, {
         method: "DELETE",
     })
-    .then(() => { getGreatHouses(baseData) })
-    .catch((err) => 
-        renderError(err))
+    .then(() => {
+        getGreatHouses(baseData);
+        const houses = getHouses();
+        const updatedHouses = houses.filter(house => house.id !== idHouse);
+        updateHouses(updatedHouses);
+    })
+    .catch((err) => renderError(err));
 };
+
 
 const generateHouseModalWarning = (idHouse) => {
     fetch(`${baseData}/${idHouse}/Characters`)

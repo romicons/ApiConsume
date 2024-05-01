@@ -23,7 +23,6 @@ const toggleMobileNav = () => {
     }
 };
 
-
 //    ACTIVATE DARK/LIGHT MODE
 
 let darkMode = localStorage.getItem('darkMode') === 'true';
@@ -60,7 +59,6 @@ const formError = (field, message) => {
     inputElement.style.outline = '2px solid #990000';
     inputElement.parentNode.insertBefore(errorText, inputElement.nextSibling);
 };
-
 
 //      RENDER ERROR
 
@@ -127,6 +125,12 @@ const updateHouses = (houses) => {
     localStorage.setItem('houses', JSON.stringify(housesToStore));
 };
 
+const updateEditedHouse = (updatedHouse) => {
+    const houses = getHouses();
+    const updatedHouses = houses.map(house => (house.id === updatedHouse.id ? updatedHouse : house));
+    updateHouses(updatedHouses);
+};
+
 //      CONECT HOUSES WITH THE HOUSE SELECTS
 
 const linkHousesWithSelect = () => {
@@ -148,7 +152,6 @@ const linkHousesWithSelect = () => {
         renderError(err);
     }
 };
-
 
 //          INITIALIZE APP 
 

@@ -8,20 +8,23 @@ const createNewHouse = (houseName, sigil, motto, signatureColor, story) => {
         SignatureColor: signatureColor,
         Story: story
     };
-  
+
     fetch(`${baseData}`, {
         method: "POST",
         headers: {"Content-Type": "application/json",},
         body: JSON.stringify(newHouse),
     })
     .then((res) => {
-      if (res.ok) {
-        return res.json();
-      }
+        if (res.ok) {
+            return res.json();
+        }
     })
-    .then(() => { getGreatHouses(baseData) })
-    .catch((err) => () => {
-        renderError(err)
+    .then((data) => { 
+        getGreatHouses(baseData);
+        updateHouses([...getHouses(), data]);
+    })
+    .catch((err) => {
+        renderError(err);
         cardsContainer.innerHTML = '';
     });
 };
