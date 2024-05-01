@@ -128,7 +128,7 @@
 
 <div align="center">
   
-![delete-house-character](https://i.imgur.com/H9MT2z4.gif)
+![delete-house-character](https://i.imgur.com/AJyVJ7w.gif)
 
 <p align="center"><i>Delete House and Character</i></p>
   
