@@ -10,6 +10,7 @@ const getGreatHouses = (fetchUrl) => {
         .then(data => {
             createCardHouses(data)
             updateHouses(data);
+            linkHousesWithSelect();
         })
         .catch(err => renderError(err, createCardHouses(baseData)))
 };
@@ -39,7 +40,6 @@ const createCardHouses = (houses) => {
         });
         viewHouseCharacters(document.querySelectorAll(".view_characters_btn"));
     }, 2000);
-    linkHousesWithSelect();
 };
 
 const viewHouseCharacters = (btns) => {
