@@ -2,7 +2,6 @@
 
 const editHouse = (idHouse, editedHouseName, editedSigil, editedMotto, editedSignatureColor, editedStory) => {
     const editedHouse = {
-        ...idHouse,
         HouseName: editedHouseName,
         Sigil: editedSigil,
         Motto: editedMotto,
@@ -17,14 +16,17 @@ const editHouse = (idHouse, editedHouseName, editedSigil, editedMotto, editedSig
     })
     .then((res) => {
         if (res.ok) {
-          return res.json();
+            return res.json();
         }
-      })
-      .then(() => { getGreatHouses(baseData) })
-      .catch((err) => () => {
-          renderError(err)
-          cardsContainer.innerHTML = '';
-      });
+    })
+    .then((updatedHouse) => {
+        updateEditedHouse(updatedHouse);
+        getGreatHouses(baseData);
+    })
+    .catch((err) => {
+        renderError(err)
+        cardsContainer.innerHTML = '';
+    });
 };
 
 const generateEditHouseForm = (idHouse) => {
@@ -179,7 +181,7 @@ const validateEditHouse = (idHouse) => {
     }
 };
 
-//      EDIT HOUSE
+//      EDIT CHARACTER
 
 const editCharacter = (idCharacter, idHouse, editedName, editedHouse, editedGender, editedAvatar, editedState, editedDescription, editedBiography) => {
     const editedCharacter = {
@@ -219,8 +221,6 @@ const generateEditCharacterForm = async (idHouse, idCharacter) => {
 
         const form = document.createElement('form');
         form.classList.add('edit-character-form');
-        console.log(GreatHousId);
-        linkHousesWithSelect();
         form.innerHTML = `
             <h2>Edit Character</h2>
             <div class="row-col">
@@ -290,10 +290,10 @@ const generateEditCharacterForm = async (idHouse, idCharacter) => {
             </div>
         `;
         cardsContainer.appendChild(form);
+        linkHousesWithSelect();
         document.getElementById('character-gender-edited').value = Gender;
         document.getElementById('character-state-edited').value = State;
         document.getElementById('character-house-edited').value = GreatHousId;
-        console.log(document.getElementById('character-house-edited').value)
 
         form.querySelector('.abort_edit_character').addEventListener('click', (e) => {
             e.preventDefault();
