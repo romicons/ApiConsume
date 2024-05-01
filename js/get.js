@@ -2,13 +2,15 @@ const cardsContainer = document.querySelector('.content');
 const searchBar = document.getElementById('search-form');
 const baseData = 'https://66173e3eed6b8fa434823b5c.mockapi.io/gotdata/v1/GreatHouses';
 
-
 //      GET GREAT HOUSES DATA
 
 const getGreatHouses = (fetchUrl) => {
     fetch(fetchUrl)
         .then(res => res.json())
-        .then(data => createCardHouses(data))
+        .then(data => {
+            createCardHouses(data)
+            updateHouses(data);
+        })
         .catch(err => renderError(err, createCardHouses(baseData)))
 };
 
@@ -35,6 +37,7 @@ const createCardHouses = (houses) => {
         });
         viewHouseCharacters(document.querySelectorAll(".view_characters_btn"));
     }, 2000)
+    linkHousesWithSelect();
 };
 
 const viewHouseCharacters = (btns) => {
@@ -174,7 +177,7 @@ const createCharacterExtendedCard = (character, house) => {
         const { id, Name, Gender, Avatar, State, Biography } = character;
         const { Sigil, SignatureColor, id:idHouse } = house; 
 
-        cardsContainer.innerHTML += `
+        cardsContainer.innerHTML = `
             <div class="extended-character-card">
                 <div class="character-info-card">
                     <div>

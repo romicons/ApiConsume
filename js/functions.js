@@ -44,30 +44,6 @@ const toggleDarkMode = () => {
     toggleMobileNav();
 };
 
-//      CONECT HOUSES WITH THE HOUSE SELECTS
-
-const linkHousesWithSelect = async () => {
-    const housesSelects = document.getElementsByClassName('from-house');
-
-    try {
-        const res = await fetch(baseData);
-        const data = await res.json();
-
-        for (let select of housesSelects) {
-            if (select.classList.contains('filter')) {
-                select.innerHTML = `<option value="">House...</option>`;
-            } else {
-                select.innerHTML = '';
-            }
-            data.forEach(house => {
-                select.innerHTML += `<option value="${house.id}">${house.HouseName}</option>`;
-            });
-        }
-    } catch (err) {
-        renderError(err);
-    };
-};;
-
 //      CHANGE CARD SHADOW 
 
 const setInnerShadowColor = (element, color) => {
@@ -131,11 +107,48 @@ const imgFromUrl = (url) => {
     return validLinks.some(regex => regex.test(url));
 };
 
-
-
 const capitalizeFirstLetter = (string) => {
     return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
 };
+
+//          CHARGE LOCAL STORAGE
+
+/*In order to reduce the number of requests to the API, it was decided that once the page is loaded, the local storage stores relevant data about the houses to facilitate the search process in the searchBy function.*/
+
+const getHouses = () => {
+    return JSON.parse(localStorage.getItem("houses"));
+};
+
+const updateHouses = (houses) => {
+    const housesToStore = houses.map(house => {
+        const { HouseName, id, Motto, Sigil, SignatureColor } = house;
+        return { HouseName, id, Motto, Sigil, SignatureColor };
+    });
+    localStorage.setItem('houses', JSON.stringify(housesToStore));
+};
+
+//      CONECT HOUSES WITH THE HOUSE SELECTS
+
+const linkHousesWithSelect = () => {
+    const housesSelects = document.getElementsByClassName('from-house');
+
+    try {
+        const data = getHouses();
+        for (let select of housesSelects) {
+            if (select.classList.contains('filter')) {
+                select.innerHTML = `<option value="">House...</option>`;
+            } else {
+                select.innerHTML = '';
+            }
+            data.forEach(house => {
+                select.innerHTML += `<option value="${house.id}">${house.HouseName}</option>`;
+            });
+        }
+    } catch (err) {
+        renderError(err);
+    }
+};
+
 
 //          INITIALIZE APP 
 
@@ -143,3 +156,5 @@ const initializeApp = () => {
     getGreatHouses(baseData);
     linkHousesWithSelect();
 }
+
+

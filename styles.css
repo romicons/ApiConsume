@@ -246,7 +246,7 @@ main {
   gap: 1rem;
   padding: 1rem;
   min-height: 22rem;
-  max-height: 25rem;
+  max-height: 30rem;
   min-width: 18rem;
   border: none;
   background-color: var(--clr-secondary);
@@ -601,7 +601,7 @@ main {
   gap: 1rem;
   padding: 1rem;
   min-height: 40rem;
-  max-height: 45rem;
+  max-height: 55rem;
   width: 90%;
   border: none;
   background-color: var(--clr-secondary);
@@ -997,6 +997,40 @@ main {
   border-radius: 50%;
   object-fit: cover;
   border: 0.5em double #757575;
+}
+
+.no-characters-found {
+  display: flex;
+  width: 80%;
+  justify-content: center;
+  flex-flow: column wrap;
+  padding-block: 1rem;
+  padding-inline: 2rem;
+  border: none;
+  gap: 1rem;
+  background-color: var(--clr-secondary);
+  color: var(--clr-dark);
+  box-shadow: var(--box-shadow);
+  border-radius: var(--border-radius);
+}
+@media screen and (min-width: 700px) {
+  .no-characters-found {
+    width: 50%;
+  }
+}
+.no-characters-found h2 {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+  font-size: 1.5rem;
+  color: #990000;
+}
+.no-characters-found p {
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.3em;
 }
 
 .edit-character-form {
