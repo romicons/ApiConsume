@@ -157,7 +157,6 @@ const linkHousesWithSelect = () => {
 
 const initializeApp = () => {
     getGreatHouses(baseData);
-    linkHousesWithSelect();
 }
 
 
