@@ -15,7 +15,6 @@ const getGreatHouses = (fetchUrl) => {
 };
 
 const createCardHouses = (houses) => {
-    // Ordena las casas alfabéticamente por el nombre
     houses.sort((a, b) => a.HouseName.localeCompare(b.HouseName));
 
     cardsContainer.innerHTML= '';
@@ -67,9 +66,6 @@ const getHouseCharacters = (idHouse) => {
 const createHouseCharacters = (houseData, houseCharacters) => {
     const { Sigil, SignatureColor, HouseName, Story, id: idHouse, Members } = houseData;
 
-    // Ordenar los personajes alfabéticamente por el nombre
-    houseCharacters.sort((a, b) => a.Name.localeCompare(b.Name));
-
     cardsContainer.innerHTML = '';
     setStyleFlex(document.getElementById('render-spinner'));
     setStyleNone(searchBar);
@@ -117,6 +113,7 @@ const createHouseCharacters = (houseData, houseCharacters) => {
                 </div>
             `;
         } else {
+            houseCharacters.sort((a, b) => a.Name.localeCompare(b.Name));
             houseCharacters.forEach(character => {
                 const { id, Name, Avatar, Description } = character;
                 cardsContainer.innerHTML += `
