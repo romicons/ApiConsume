@@ -95,6 +95,15 @@
   
 </div>
 
+<p>You can even search for your favorite characters in your own way.</p>
+
+<div align="center">
+
+![search-for-characters](https://i.imgur.com/ENuwQxN.gif)
+
+<p align="center"><i>Search for Characters</i></p>
+  
+</div>
 
 <h2 align="center">Update</h2>
 
