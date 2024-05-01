@@ -2,17 +2,22 @@ const cardsContainer = document.querySelector('.content');
 const searchBar = document.getElementById('search-form');
 const baseData = 'https://66173e3eed6b8fa434823b5c.mockapi.io/gotdata/v1/GreatHouses';
 
-
 //      GET GREAT HOUSES DATA
 
 const getGreatHouses = (fetchUrl) => {
     fetch(fetchUrl)
         .then(res => res.json())
-        .then(data => createCardHouses(data))
+        .then(data => {
+            createCardHouses(data)
+            updateHouses(data);
+        })
         .catch(err => renderError(err, createCardHouses(baseData)))
 };
 
 const createCardHouses = (houses) => {
+    // Ordena las casas alfabéticamente por el nombre
+    houses.sort((a, b) => a.HouseName.localeCompare(b.HouseName));
+
     cardsContainer.innerHTML= '';
     setStyleFlex(document.getElementById('render-spinner'));
     setStyleNone(searchBar);
@@ -20,21 +25,22 @@ const createCardHouses = (houses) => {
         setStyleNone(document.getElementById('render-spinner'));
         setStyleFlex(searchBar);
         houses.forEach(house => {
-            const { HouseName, Sigil, id, Motto,} = house;
+            const { HouseName, Sigil, id, Motto } = house;
             cardsContainer.innerHTML += `
-            <div class="house-card">
-                <h2>${HouseName}</h2>
-                <img src="${Sigil}" alt="${HouseName} Sigil">
-                <h3>${Motto}</h3>
-                <button class="view_characters_btn" data-cardid="${id}">
-                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
-                    <span>View more</span>
-                </button>
-            </div>
+                <div class="house-card">
+                    <h2>${HouseName}</h2>
+                    <img src="${Sigil}" alt="${HouseName} Sigil">
+                    <h3>${Motto}</h3>
+                    <button class="view_characters_btn" data-cardid="${id}">
+                        <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                        <span>View more</span>
+                    </button>
+                </div>
             `;
         });
         viewHouseCharacters(document.querySelectorAll(".view_characters_btn"));
-    }, 2000)
+    }, 2000);
+    linkHousesWithSelect();
 };
 
 const viewHouseCharacters = (btns) => {
@@ -59,11 +65,15 @@ const getHouseCharacters = (idHouse) => {
 };
 
 const createHouseCharacters = (houseData, houseCharacters) => {
-    const { Sigil, SignatureColor, HouseName, Story, id:idHouse, Members } = houseData;
+    const { Sigil, SignatureColor, HouseName, Story, id: idHouse, Members } = houseData;
+
+    // Ordenar los personajes alfabéticamente por el nombre
+    houseCharacters.sort((a, b) => a.Name.localeCompare(b.Name));
+
     cardsContainer.innerHTML = '';
     setStyleFlex(document.getElementById('render-spinner'));
     setStyleNone(searchBar);
-    setTimeout (() => {
+    setTimeout(() => {
         setStyleFlex(searchBar);
         setStyleNone(document.getElementById('render-spinner'));
         cardsContainer.innerHTML += `
@@ -77,9 +87,7 @@ const createHouseCharacters = (houseData, houseCharacters) => {
                 </div>
                 <h2>${HouseName}</h2>
                 <div>
-                    <p>
-                        ${Story}
-                    </p>
+                    <p>${Story}</p>
                 </div>
                 <div>
                     <button class="negative-btn delete_house_btn">
@@ -93,19 +101,20 @@ const createHouseCharacters = (houseData, houseCharacters) => {
                 </div>
             </div>
         `;
+
         if (Members.length === 0) {
             cardsContainer.innerHTML += `
-            <div class="no-content">
-                <div>
-                    <h3>
-                        <i class="fa-solid fa-circle-exclamation"></i>
-                        Ups!
-                    </h3>
+                <div class="no-content">
+                    <div>
+                        <h3>
+                            <i class="fa-solid fa-circle-exclamation"></i>
+                            Ups!
+                        </h3>
+                    </div>
+                    <div>
+                        <p>Looks like this house doesn't have any characters yet. Please try to add some.</p>
+                    </div>
                 </div>
-                <div>
-                    <p>Looks like this house doesn't have any characters yet. Please try to add some.</p>
-                </div>
-            </div>
             `;
         } else {
             houseCharacters.forEach(character => {
@@ -115,7 +124,7 @@ const createHouseCharacters = (houseData, houseCharacters) => {
                         <div>
                             <div class="header-card">
                                 <h2>${Name}</h2>
-                                <img src="${Avatar}" alt="${Name} portrait}">
+                                <img src="${Avatar}" alt="${Name} portrait">
                             </div>
                             <div>
                                 <p>${Description}</p>
@@ -130,12 +139,13 @@ const createHouseCharacters = (houseData, houseCharacters) => {
                     </div>
                 `;
                 const characterCards = document.querySelectorAll('.reduced-character-card');
-                characterCards.forEach(card => {setInnerShadowColor(card, SignatureColor);});
+                characterCards.forEach(card => { setInnerShadowColor(card, SignatureColor); });
                 viewCharacterDetails(document.querySelectorAll(".view_more_details_btn"));
             });
         }
-        document.querySelector('.delete_house_btn').addEventListener('click', () => {generateHouseModalWarning(idHouse)});
-        document.querySelector('.edit_house_btn').addEventListener('click', () => {generateEditHouseForm(idHouse)});
+
+        document.querySelector('.delete_house_btn').addEventListener('click', () => { generateHouseModalWarning(idHouse) });
+        document.querySelector('.edit_house_btn').addEventListener('click', () => { generateEditHouseForm(idHouse) });
         document.querySelector('.back_to_great_houses').addEventListener('click', () => { getGreatHouses(baseData) });
     }, 2000);
 };
@@ -174,7 +184,7 @@ const createCharacterExtendedCard = (character, house) => {
         const { id, Name, Gender, Avatar, State, Biography } = character;
         const { Sigil, SignatureColor, id:idHouse } = house; 
 
-        cardsContainer.innerHTML += `
+        cardsContainer.innerHTML = `
             <div class="extended-character-card">
                 <div class="character-info-card">
                     <div>
