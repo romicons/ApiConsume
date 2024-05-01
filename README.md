@@ -99,7 +99,7 @@
 
 <div align="center">
 
-![search-for-characters](https://i.imgur.com/ENuwQxN.gif)
+![search-for-characters](https://i.imgur.com/TBdGaRH.gif)
 
 <p align="center"><i>Search for Characters</i></p>
   
